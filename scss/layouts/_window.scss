@@ -1,0 +1,15 @@
+/* Vault menu */
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+    background-color: var(--titlebar-background);
+    padding: 5px var(--size-4-2) 4.4px;
+    order: 0;
+}
+/* Vault menu on focus */
+body.is-focused:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    background-color: var(--titlebar-background-focused);
+}
+/* left sidebar tabs background color when isn't focus */
+.mod-left-split .workspace-tabs.mod-top {
+    --tab-container-background: var(--background-secondary);
+}
