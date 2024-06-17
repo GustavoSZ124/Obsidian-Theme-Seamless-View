@@ -1,0 +1,14 @@
+// El $prefix debe incluir un '-' al final
+// El $suffix debe incluir un '-' al inicio
+@mixin css-variables($map, $prefix:'', $suffix:''){
+    @each $key, $value in $map {
+        --#{$prefix}#{$key}#{$suffix}: var(#{$value});
+    }
+}
+// genera la variable del color y la variable rgb correspondiente
+@mixin colors($colors){
+    @each $key, $value in $colors {
+        --color-#{$key}: #{$value};
+        --color-#{$key}-rgb: #{red($value)}, #{green($value)}, #{blue($value)};
+    }
+}

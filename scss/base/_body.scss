@@ -1,0 +1,12 @@
+@use '../utils' as *;
+
+body{
+    --accent-h: #{hue($accent-color)};
+    --accent-s: #{saturation($accent-color)};
+    --accent-l: #{lightness($accent-color)};
+
+    @include css-variables($backgrounds,$prefix: 'background-');
+    @include css-variables($titlebar,$prefix: 'titlebar-');
+    --header-height: 37px; // titlebar height
+    --ribbon-width: 41px;
+}
