@@ -1,0 +1,15 @@
+
+$css-variables: (
+    'file': ('margins': 0 var(--size-4-8) var(--size-4-8)),
+    'header': ('height': 37px), //titlebar height
+    'inline-title': (
+        'margin-bottom': 4px,
+        'size': var(--h2-size),
+        'weight': var(--h2-weight),
+        'color': var(--text-muted),
+    ),
+    'ribbon': (
+        'background-collapsed': var(--background-secondary),
+        'weight': 41px
+    ),
+);

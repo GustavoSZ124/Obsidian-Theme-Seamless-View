@@ -1,14 +1,29 @@
 // El $prefix debe incluir un '-' al final
 // El $suffix debe incluir un '-' al inicio
-@mixin css-variables($map, $prefix:'', $suffix:''){
+@mixin single-map-css-vars($map, $suffix:'', $var: false){
     @each $key, $value in $map {
-        --#{$prefix}#{$key}#{$suffix}: var(#{$value});
+        --#{$key}#{$suffix}: #{if($var, var($value), $value)};
     }
 }
-// genera la variable del color y la variable rgb correspondiente
+// genera las variables CSS de un mapa anidado
+@mixin double-map-css-vars($map, $var: false){
+    @each $prefix, $properties in $map {
+        @each $key, $value in $properties {
+            --#{$prefix}-#{$key}: #{if($var, var($value), $value)};
+        }
+    }
+}
+// genera las variables de los color y sus variables rgb correspondiente
 @mixin colors($colors){
     @each $key, $value in $colors {
         --color-#{$key}: #{$value};
         --color-#{$key}-rgb: #{red($value)}, #{green($value)}, #{blue($value)};
     }
+}
+// El $dir debe incluir un '-' al inicio
+@mixin thin-border($dir:''){
+    border#{$dir}: var(--tab-outline-width) solid var(--tab-outline-color);
+}
+@mixin hr-border($dir:''){
+    border#{$dir}: var(--hr-thickness) solid var(--hr-color);
 }

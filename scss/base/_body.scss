@@ -5,8 +5,6 @@ body{
     --accent-s: #{saturation($accent-color)};
     --accent-l: #{lightness($accent-color)};
 
-    @include css-variables($backgrounds,$prefix: 'background-');
-    @include css-variables($titlebar,$prefix: 'titlebar-');
-    --header-height: 37px; // titlebar height
-    --ribbon-width: 41px;
+    @include double-map-css-vars($backgrounds, true);
+    @include double-map-css-vars($css-variables);
 }

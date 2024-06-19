@@ -1,0 +1,18 @@
+$accent-color: hsl(258, 88%, 66%);
+
+$colors: (
+    'base-65': hsl(0, 0%, 64%),
+);
+
+$backgrounds: (
+    'background': (
+        'primary': --color-base-25,
+        'secondary': --color-base-00,
+        'primary-alt': --color-base-30,
+        'secondary-alt': --color-base-30,
+    ),
+    'titlebar': (
+        'background': --background-secondary-alt,
+        'background-focused': --background-secondary,
+    )
+);
