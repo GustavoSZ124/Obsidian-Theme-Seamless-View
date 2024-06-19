@@ -1,0 +1,26 @@
+/* align properties container */
+.metadata-container {
+    transform: translateX(0);
+    .metadata-add-button {
+        margin-top: 0;
+    }
+}
+/* properties heading clickable area */
+.metadata-properties-heading {
+    margin-bottom: 0;
+    width: 100%;
+}
+/* add document icon to properties title */
+.metadata-properties-title {
+    padding-inline-start: 16px;
+    color: var(--text-muted);
+    &::before {
+        align-items: center;
+        content: '📄';
+    }
+}
+/* frontmatter background in source mode */
+div:has(> .frontmatter), div:has(> .cm-hmd-frontmatter),
+.cm-line:has(> .is-collapsed):not(:has(> .cm-header, .cm-list-1)):first-child {
+    background-color: var(--metadata-background);
+}

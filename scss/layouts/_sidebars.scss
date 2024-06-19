@@ -15,3 +15,7 @@ body.is-focused:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
     --tab-container-background: var(--background-secondary);
     @include thin-border('-top');
 }
+/* properties background in sidebars */
+.workspace>.workspace-split:not(.mod-root) .metadata-container {
+    background-color: transparent;
+}

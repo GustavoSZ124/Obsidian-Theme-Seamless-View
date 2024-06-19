@@ -8,6 +8,11 @@ $css-variables: (
         'weight': var(--h2-weight),
         'color': var(--text-muted),
     ),
+    'metadata': (
+        'background': var(--background-primary-alt),
+        'padding': 0,
+    ),
+    'p': ('spacing': 0),
     'ribbon': (
         'background-collapsed': var(--background-secondary),
         'weight': 41px
