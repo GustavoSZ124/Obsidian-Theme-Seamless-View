@@ -3,7 +3,7 @@
 .mod-root .workspace-tab-header-container-inner {
     padding: 0 15px 0 0;
 }
-/* add border-bottom at the start and end of the note */
+/* add border-bottom at the start and end of the note in both modes */
 .inline-title, .markdown-preview-view .mod-footer,
 .view-content>.markdown-source-view .cm-line:last-child {
     @include hr-border('-bottom');

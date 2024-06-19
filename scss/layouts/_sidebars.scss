@@ -1,16 +1,16 @@
 @use '../utils' as *;
-/* Vault menu */
+/* Move Vault menu to the top */
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
     background-color: var(--titlebar-background);
     padding: 5px var(--size-4-2);
     border-top: none;
     order: 0;
 }
-/* Vault menu on focus */
+/* change Vault menu background on focus */
 body.is-focused:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
     background-color: var(--titlebar-background-focused);
 }
-/* left sidebar tabs background color when isn't focus */
+/* keep left sidebar tabs background color when isn't focus */
 .mod-left-split .workspace-tabs.mod-top {
     --tab-container-background: var(--background-secondary);
     @include thin-border('-top');

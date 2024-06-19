@@ -5,7 +5,7 @@
         margin-top: 0;
     }
 }
-/* properties heading clickable area */
+/* expand properties heading clickable area */
 .metadata-properties-heading {
     margin-bottom: 0;
     width: 100%;
@@ -19,7 +19,7 @@
         content: '📄';
     }
 }
-/* frontmatter background in source mode */
+/* add frontmatter background in source mode */
 div:has(> .frontmatter), div:has(> .cm-hmd-frontmatter),
 .cm-line:has(> .is-collapsed):not(:has(> .cm-header, .cm-list-1)):first-child {
     background-color: var(--metadata-background);
