@@ -2,4 +2,5 @@
 
 .theme-dark{
     @include colors($colors);
+    @include single-map-css-vars($tag-colors,'-color',true);
 }

@@ -1,10 +1,11 @@
 @use '../utils' as *;
 
 body{
-    --accent-h: #{hue($accent-color)};
+    --accent-h: #{hue($accent-color)/1deg};
     --accent-s: #{saturation($accent-color)};
     --accent-l: #{lightness($accent-color)};
 
     @include double-map-css-vars($backgrounds, true);
     @include double-map-css-vars($css-variables);
+    @include single-map-css-vars($heading-sizes,'-size');
 }

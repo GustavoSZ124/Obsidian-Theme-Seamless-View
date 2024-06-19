@@ -1,0 +1,18 @@
+/* calculate live preview header div height to match read mode: height = line-height x font-size
+change box-sizing to not count borders in the height
+*/
+@for $i from 1 through 3 {
+    .HyperMD-header-#{$i} {
+        height: calc(var(--h#{$i}-line-height) * 1em);
+        box-sizing: content-box;
+    }
+}
+/* align live preview header span with the header div to match read mode */
+.HyperMD-header span{
+    vertical-align: top;
+}
+/* move live preview header collapse indicator to match read mode */
+.markdown-source-view.mod-cm6 .HyperMD-header .collapse-indicator{
+    transform: translateY(-2px);
+    inset-inline-end: 1px;
+}
