@@ -1,7 +1,7 @@
 @use '../utils' as *;
 
 body{
-    --accent-h: #{hue($accent-color)/1deg};
+    --accent-h: #{strip-units(hue($accent-color))};
     --accent-s: #{saturation($accent-color)};
     --accent-l: #{lightness($accent-color)};
 
