@@ -1,11 +1,11 @@
 /* read mode div's bottom-margin to match empty new lines between elements including paragraphs, codeblocks, lists, callouts, headings and the end of the file.
 */
 div:has(> p):has(+ div > :is(p)),
-div:has(> pre:not(.frontmatter)):has(+ div > :is(pre, .callout)),
-div:has(> :is(ul, ol)):has(+ div > :is(p, .callout)),
-div:has(> :is(.callout)):has(+ div > :is(p, .callout):not(.admonition)),
-div:has(> :is(p, ul, ol, .callout)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
-div:has(> :is(p, ul, ol, .callout, table, h1, h2, h3, h4, h5, h6)):has(+ .mod-footer) {
+div:has(> pre:not(.frontmatter)):has(+ div > :is(pre, blockquote, .callout)),
+div:has(> :is(ul, ol)):has(+ div > :is(p, blockquote, .callout)),
+div:has(> :is(blockquote, .callout)):has(+ div > :is(p, .callout):not(.admonition)),
+div:has(> :is(p, ul, ol, blockquote, .callout)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
+div:has(> :is(p, ul, ol, blockquote, .callout, table, h1, h2, h3, h4, h5, h6)):has(+ .mod-footer) {
     margin-bottom: 1.5em;
 }
 /* remove the bottom-margin of the first line in read mode if it's before a heading */

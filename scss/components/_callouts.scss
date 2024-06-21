@@ -1,0 +1,27 @@
+@use '../utils' as *;
+/* remove callout margins */
+blockquote, .callout {
+    margin: 0;
+}
+/* read mode blockquote padding to match live preview */
+.markdown-preview-view blockquote {
+    padding-inline-start: 17px;
+}
+/* blockquote's padding to see the cursor */
+.cm-s-obsidian span.cm-formatting-quote {
+    padding-inline-start: 3px;
+}
+/* align read mode checkboxes inside callouts */
+.markdown-preview-view .callout {
+    .task-list-item-checkbox {
+        --checkbox-indent: 0.5em;
+    }
+}
+/* live preview lists inside callouts to match read mode */
+.markdown-source-view .callout{
+    @include bullet-point;
+    .task-list-item-checkbox{
+        --checkbox-margin-inline-start: -1.35em;
+        --checkbox-margin-inline-end: 0.15em;
+    }
+}

@@ -1,12 +1,32 @@
 
 $css-variables: (
+    'callout': ('padding': 8.2px 12px 8px 18px),
+    'canvas': (
+        'space-x':20px,
+        'space-y': 16px
+    ),
+    'checkbox': (
+        'indent': 0.4375em,
+        'margin-inline-start': 0.3125em,
+        'margin-inline-end': -0.1875em,
+    ),
     'file': ('margins': 0 var(--size-4-8) var(--size-4-8)),
     'header': ('height': 37px), //titlebar height
+    'indentation-guide': (
+        'reading-indent': -0.65em,
+        'editing-indent': 0.45em,
+    ),
     'inline-title': (
         'margin-bottom': 4px,
         'size': var(--h2-size),
         'weight': var(--h2-weight),
         'color': var(--text-muted),
+    ),
+    'list': (
+        'spacing': 0,
+        'indent': 1.125em,
+        'indent-editing': calc(var(--list-indent) - 1.025em),
+        'bullet-end-padding': 1.2rem,
     ),
     'metadata': (
         'background': var(--background-primary-alt),
@@ -17,6 +37,7 @@ $css-variables: (
         'background-collapsed': var(--background-secondary),
         'weight': 41px
     ),
+    'scrollbar': ('width': 12px),
 );
 
 $heading-sizes: (

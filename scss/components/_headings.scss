@@ -11,8 +11,12 @@ change box-sizing to not count borders in the height
 .HyperMD-header span{
     vertical-align: top;
 }
+/* align read mode heading collapse indicator */
+.markdown-preview-view .heading-collapse-indicator {
+    margin-inline-start: -20px;
+}
 /* move live preview header collapse indicator to match read mode */
 .markdown-source-view.mod-cm6 .HyperMD-header .collapse-indicator{
     transform: translateY(-2px);
-    inset-inline-end: 1px;
+    padding-inline-end: 4px;
 }

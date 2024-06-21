@@ -27,3 +27,23 @@
 @mixin hr-border($dir:''){
     border#{$dir}: var(--hr-thickness) solid var(--hr-color);
 }
+// remove default li marker and add styled bullet point
+@mixin bullet-point{
+    ul > li::marker {
+        color: transparent
+    }
+    ul:not(.contains-task-list) > li::before {
+        position: absolute;
+        content: '\200B';
+        pointer-events: none;
+        color: var(--list-marker-color);
+        border-radius: var(--list-bullet-radius);
+        width: var(--list-bullet-size);
+        height: var(--list-bullet-size);
+        border: var(--list-bullet-border);
+        transform: translate(-0.76em, 0.6em);
+        background-color: var(--list-marker-color);
+        transition: transform 0.15s, box-shadow 0.15s;
+        will-change: transform;
+    }
+}

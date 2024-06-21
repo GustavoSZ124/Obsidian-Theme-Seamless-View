@@ -19,6 +19,10 @@
         content: '📄';
     }
 }
+/* align metadata collapse indicator */
+.metadata-properties-heading .collapse-indicator {
+    inset-inline-start: -20px;
+}
 /* add frontmatter background in source mode */
 div:has(> .frontmatter), div:has(> .cm-hmd-frontmatter),
 .cm-line:has(> .is-collapsed):not(:has(> .cm-header, .cm-list-1)):first-child {
