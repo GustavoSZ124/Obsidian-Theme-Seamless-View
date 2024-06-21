@@ -1,0 +1,4 @@
+/* add new variable scrollbar width to calculate canvas paddings */
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}

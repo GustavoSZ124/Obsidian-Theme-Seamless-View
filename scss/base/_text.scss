@@ -1,0 +1,5 @@
+/* live preview text wraps in the same way and occupies the same space than read mode.
+The downside is that spaces at the end of the lines are lost from view */
+.cm-sizer .cm-lineWrapping {
+    white-space: normal;
+}

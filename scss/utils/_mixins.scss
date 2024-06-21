@@ -1,8 +1,8 @@
 // El $prefix debe incluir un '-' al final
 // El $suffix debe incluir un '-' al inicio
-@mixin single-map-css-vars($map, $suffix:'', $var: false){
+@mixin single-map-css-vars($map, $prefix:'', $suffix:'', $var: false){
     @each $key, $value in $map {
-        --#{$key}#{$suffix}: #{if($var, var($value), $value)};
+        --#{$prefix}#{$key}#{$suffix}: #{if($var, var($value), $value)};
     }
 }
 // genera las variables CSS de un mapa anidado

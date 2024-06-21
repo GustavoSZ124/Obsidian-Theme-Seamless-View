@@ -1,0 +1,14 @@
+/* move mathjax to left and remove extra space in both modes */
+.math-block mjx-container[jax=CHTML][display=true] {
+    display: inline-block;
+    line-height: normal;
+    overflow-x: initial;
+    padding: 0;
+    margin: 0;
+}
+/* reduce size of mathjax edit button */
+.markdown-source-view.mod-cm6 .math-block .edit-block-button {
+    padding: var(--size-2-1) var(--size-2-2);
+    right: 0;
+    top: 0;
+}
