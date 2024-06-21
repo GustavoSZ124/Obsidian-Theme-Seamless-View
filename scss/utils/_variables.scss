@@ -1,6 +1,11 @@
 
 $css-variables: (
-    'callout': ('padding': 8.2px 12px 8px 18px),
+    'callout': (
+        'padding': 8.2px 12px 8px 18px,
+        'todo': var(--color-orange-rgb),
+        'important': var(--color-yellow-rgb),
+        'question': var(--color-green-alt-rgb),
+    ),
     'canvas': (
         'space-x':20px,
         'space-y': 16px

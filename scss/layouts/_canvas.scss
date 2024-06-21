@@ -28,12 +28,12 @@
 /* canvas card blocks height above and bellow content in both modes */
 .canvas-node-content.markdown-embed>.markdown-embed-content>.markdown-preview-view::before,
 .canvas-node-content.markdown-embed>.markdown-embed-content>.markdown-preview-view::after,
-.markdown-source-view.mod-inside-iframe>.cm-editor>.cm-scroller::before{
+.markdown-source-view.mod-inside-iframe>.cm-editor>.cm-scroller::before {
     min-height: min(calc(10vh - 3px), var(--canvas-space-y));
     max-height: var(--canvas-space-y);
 }
 /* live preview canvas card bellow block correction to match read mode */
-.markdown-source-view.mod-inside-iframe>.cm-editor>.cm-scroller::after{
+.markdown-source-view.mod-inside-iframe>.cm-editor>.cm-scroller::after {
     min-height: min(calc(10vh - 3px), calc(var(--canvas-space-y) - 1px));
     max-height: var(--canvas-space-y);
 }

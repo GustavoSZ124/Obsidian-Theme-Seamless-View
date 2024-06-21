@@ -1,7 +1,11 @@
 @use '../utils' as *;
-/* remove callout margins */
+/* callout wrap break words, hide scrollbar and remove margins to match read mode */
 blockquote, .callout {
+    overflow-wrap: break-word;
     margin: 0;
+    .callout-content {
+        overflow: hidden;
+    }
 }
 /* read mode blockquote padding to match live preview */
 .markdown-preview-view blockquote {
@@ -18,10 +22,19 @@ blockquote, .callout {
     }
 }
 /* live preview lists inside callouts to match read mode */
-.markdown-source-view .callout{
+.markdown-source-view .callout {
     @include bullet-point;
     .task-list-item-checkbox{
         --checkbox-margin-inline-start: -1.35em;
         --checkbox-margin-inline-end: 0.15em;
+    }
+}
+/* codeblocks inside callouts */
+.markdown-rendered .callout { 
+    &:has(pre){
+        padding-bottom: 13px;
+    }
+    pre{
+        padding: 0;
     }
 }

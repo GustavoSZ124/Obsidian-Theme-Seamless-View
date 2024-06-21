@@ -7,24 +7,24 @@
     }
 }
 /* live preview codeblock inline end padding to match read mode */
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock{
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
     padding-inline-end: 12px;
     .collapse-indicator {
         padding-inline-end: 3px;
     }
 }
 /* read mode codeblock copy button */
-.markdown-rendered button.copy-code-button{
+.markdown-rendered button.copy-code-button {
     padding: 4px 6px;
     margin: 0 4px;
 }
 /* live preview codeblock copy button */
-.markdown-source-view.mod-cm6 .code-block-flair{
+.markdown-source-view.mod-cm6 .code-block-flair {
     padding: var(--size-4-1) var(--size-4-1) 0;
     top: 0;
 }
 /* css/scss syntax colors */
-pre.language-css, pre.language-scss{
+pre.language-css, pre.language-scss {
     --code-string: var(--color-orange-alt);
     --code-function: var(--color-cyan);
     --code-normal: var(--color-red-alt);
