@@ -1,0 +1,22 @@
+@use '../utils' as *;
+/* remove live preview embedding scrollbar space */
+.markdown-embed .markdown-preview-view {
+    scrollbar-gutter: unset;
+}
+/* change live preview embed title color and remove its padding */
+.embed-title {
+    color: var(--embed-title-color);
+    padding: 0;
+}
+/* align live preview bullet point inside embedding */
+.markdown-source-view .markdown-embed .list-bullet {
+    // @include bullet-point;
+    margin-inline-start: -0.85em;
+}
+/* center embed images in both modes */
+.markdown-source-view.mod-cm6 img[alt*=center],
+.markdown-reading-view img[alt*=center] {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    display: block;
+}

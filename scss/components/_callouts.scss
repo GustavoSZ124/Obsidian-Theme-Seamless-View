@@ -1,25 +1,28 @@
 @use '../utils' as *;
-/* callout wrap break words, hide scrollbar and remove margins to match read mode */
-blockquote, .callout {
+/* callout wrap break words and hide scrollbar to match read mode */
+.callout {
     overflow-wrap: break-word;
     margin: 0;
     .callout-content {
         overflow: hidden;
     }
 }
-/* read mode blockquote padding to match live preview */
+/* read mode blockquote margin and padding to match live preview */
 .markdown-preview-view blockquote {
     padding-inline-start: 17px;
+    margin: 0;
 }
 /* blockquote's padding to see the cursor */
 .cm-s-obsidian span.cm-formatting-quote {
     padding-inline-start: 3px;
 }
+/* remove live preview callout margin inside callouts */
+.markdown-rendered .callout .callout-content .callout {
+    margin: 0;
+}
 /* align read mode checkboxes inside callouts */
-.markdown-preview-view .callout {
-    .task-list-item-checkbox {
-        --checkbox-indent: 0.5em;
-    }
+.markdown-preview-view .callout .task-list-item-checkbox {
+    --checkbox-indent: 0.5em;
 }
 /* live preview lists inside callouts to match read mode */
 .markdown-source-view .callout {
@@ -29,7 +32,7 @@ blockquote, .callout {
         --checkbox-margin-inline-end: 0.15em;
     }
 }
-/* codeblocks inside callouts */
+/* codeblocks rendered inside callouts */
 .markdown-rendered .callout { 
     &:has(pre){
         padding-bottom: 13px;
