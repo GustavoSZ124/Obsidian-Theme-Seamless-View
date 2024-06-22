@@ -4,4 +4,5 @@
     @include colors($colors);
     @include single-map-css-vars($tag-colors,$suffix: '-color',$var: true);
     @include single-map-css-vars($code-syntax,$prefix: 'code-',$var: true);
+    --text-highlight-bg-rgb: var(--highlight-color);
 }

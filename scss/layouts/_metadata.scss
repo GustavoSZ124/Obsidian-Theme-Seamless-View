@@ -28,3 +28,7 @@ div:has(> .frontmatter), div:has(> .cm-hmd-frontmatter),
 .cm-line:has(> .is-collapsed):not(:has(> .cm-header, .cm-list-1)):first-child {
     background-color: var(--metadata-background);
 }
+/* change tag padding y inside properties */
+.metadata-property[data-property-key=tags]{
+    --tag-padding-y: 0.25em;
+}

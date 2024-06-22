@@ -6,6 +6,7 @@ $colors: (
     'orange-alt': hsl(29, 54%, 61%),
     'yellow': hsl(50, 65%, 58%),
     'green-alt': hsl(95, 38%, 62%),
+    'cyan-alt': hsl(170, 100%, 24%),
     'cyan': hsl(187, 47%, 55%),
     'blue': hsl(207, 82%, 66%),
     'pink': hsl(286, 60%, 67%),
@@ -26,5 +27,7 @@ $backgrounds: (
 
 $tag-colors: (
     'hr': --color-base-40,
+    'strike': --text-muted,
     'table-border': --color-base-50,
+    'highlight': --color-cyan-alt-rgb,
 )
