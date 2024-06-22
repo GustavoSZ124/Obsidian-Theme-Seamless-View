@@ -15,6 +15,10 @@ $css-variables: (
         'margin-inline-start': 0.3125em,
         'margin-inline-end': -0.1875em,
     ),
+    'embed': (
+        'padding': 0,
+        'border-start': none
+    ),
     'file': ('margins': 0 var(--size-4-8) var(--size-4-8)),
     'header': ('height': 37px), //titlebar height
     'indentation-guide': (
@@ -43,6 +47,7 @@ $css-variables: (
         'weight': 41px
     ),
     'scrollbar': ('width': 12px),
+    'tag': ('padding-y': 0.15em),
 );
 
 $heading-sizes: (

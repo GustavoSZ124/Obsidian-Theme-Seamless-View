@@ -13,7 +13,7 @@
     // @include bullet-point;
     margin-inline-start: -0.85em;
 }
-/* center embed images in both modes */
+/* center embed images in both modes, needs to be !important for external images in live preview */
 .markdown-source-view.mod-cm6 img[alt*=center],
 .markdown-reading-view img[alt*=center] {
     margin-right: auto !important;
