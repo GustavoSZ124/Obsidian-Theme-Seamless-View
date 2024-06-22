@@ -1,0 +1,31 @@
+/* hide automatic empty line above tables in live preview */
+.cm-line:has(> br:only-child):has(+ :is(.cm-table-widget)) {
+    display: none;
+}
+/* remove live preview bottom border inside tables */
+.table-wrapper>.table-editor .table-cell-wrapper .cm-active {
+    border-bottom: none;
+}
+/* read mode empty cells height to match live preview */
+.markdown-rendered :is(th, td) {
+    height: calc(var(--table-text-size) * var(--table-line-height) + 8px);
+}
+/* read mode table margins to match live preview except inside callouts */
+.markdown-preview-view :not(.callout-content) > table {
+    margin: var(--size-4-4) 0;
+}
+/* change first column bold color to match header color in both modes */
+.markdown-rendered td:first-child {
+    --bold-color: inherent;
+}
+/* match list bullet points inside tables in both modes */
+.markdown-rendered .table-cell-wrapper {
+    .list-bullet {
+        margin-inline-start: 0;
+        padding-right: 0;
+    }
+    .cm-formatting-list-ul,
+    .cm-formatting-list-ol {
+        padding-inline-start: 0;
+    }
+}

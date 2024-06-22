@@ -37,8 +37,16 @@
     min-height: min(calc(10vh - 3px), calc(var(--canvas-space-y) - 1px));
     max-height: var(--canvas-space-y);
 }
-
 /* live preview codeblocks begin and end blocks inside canvas */
 .mod-inside-iframe :is(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
     min-height: calc(1em * var(--line-height-normal));
+}
+/* read mode table padding and margin bottom inside canvas */
+.canvas-node-content.markdown-embed>.markdown-embed-content>.markdown-preview-view .markdown-preview-sizer>div:last-child {
+    &>table:last-child {
+            margin-bottom: var(--size-4-4);
+        }
+    &:has(> table){
+        padding-bottom: 1.5em;
+    }
 }
