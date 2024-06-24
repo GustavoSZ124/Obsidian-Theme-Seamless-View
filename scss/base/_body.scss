@@ -7,5 +7,6 @@ body{
 
     @include double-map-css-vars($backgrounds, true);
     @include double-map-css-vars($css-variables);
-    @include single-map-css-vars($heading-sizes,'-size');
+    @include single-map-css-vars($heading-sizes, $suffix: '-size');
+    @include single-map-css-vars($heading-line-height, $suffix: '-line-height');
 }

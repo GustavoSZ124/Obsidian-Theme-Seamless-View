@@ -1,15 +1,6 @@
-/* calculate live preview header div height to match read mode: height = line-height x font-size
-change box-sizing to not count borders in the height
-*/
-@for $i from 1 through 3 {
-    .HyperMD-header-#{$i} {
-        height: calc(var(--h#{$i}-line-height) * 1em);
-        box-sizing: content-box;
-    }
-}
-/* align live preview header span with the header div to match read mode */
-.HyperMD-header span {
-    vertical-align: top;
+/* hr margins in read to match the height in live preview mode */
+hr, .markdown-rendered hr {
+    margin: calc((var(--font-text-size) * var(--line-height-normal) - 0.125em)/2) 0;
 }
 /* align read mode heading collapse indicator */
 .markdown-preview-view .heading-collapse-indicator {
@@ -17,14 +8,13 @@ change box-sizing to not count borders in the height
 }
 /* move live preview header collapse indicator to match read mode */
 .markdown-source-view.mod-cm6 .HyperMD-header .collapse-indicator {
-    transform: translateY(-2px);
     padding-inline-end: 4px;
 }
 /* align inline codeblocks inside headings in both modes */
 .cm-s-obsidian .HyperMD-header .cm-inline-code,
 .markdown-rendered :is(h1, h2, h3, h4, h5, h6)>code {
     --code-background: transparent;
-    transform: translateY(1px);
+    transform: translateY(3px);
     display: inline-block;
     vertical-align: top;
     font-size: inherit;
@@ -36,4 +26,16 @@ change box-sizing to not count borders in the height
 .cm-s-obsidian .cm-inline-code.cm-formatting~.cm-header.cm-inline-code {
     --code-background: var(--background-primary-alt);
     padding: 0;
+}
+/* read mode tag paddings inside headings */
+.heading-collapse-indicator~a.tag {
+    --tag-padding-x: 0.5em;
+    --tag-padding-y: 0;
+}
+/* live preview tag paddings and position inside headings to match read mode */
+.HyperMD-header .cm-hashtag {
+    --tag-padding-x: 0.5em;
+    --tag-padding-y: 0;
+    display: inline-block;
+    font-size: var(--tag-size) !important;
 }

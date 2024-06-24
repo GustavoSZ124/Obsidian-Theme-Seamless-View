@@ -44,7 +44,7 @@ $css-variables: (
     'p': ('spacing': 0),
     'ribbon': (
         'background-collapsed': var(--background-secondary),
-        'weight': 41px
+        'width': 41px
     ),
     'scrollbar': ('width': 12px),
     'tag': ('padding-y': 0.15em),
@@ -55,4 +55,10 @@ $heading-sizes: (
     'h2': 1.5625em,
     'h3': 1.375em,
     'h4': 1.25em,
+);
+
+$heading-line-height: (
+    'h1': normal,
+    'h2': normal,
+    'h3': normal,
 );

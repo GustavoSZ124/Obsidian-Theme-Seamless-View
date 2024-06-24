@@ -4,11 +4,12 @@ div:has(> p):has(+ div > :is(p)),
 div:has(> pre:not(.frontmatter)):has(+ div > :is(pre, blockquote, .callout)),
 div:has(> :is(ul, ol)):has(+ div > :is(p, blockquote, .callout)),
 div:has(> :is(blockquote, .callout)):has(+ div > :is(p, .callout):not(.admonition)),
-div:has(> :is(p, ul, ol, blockquote, .callout)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
+div:has(> :is(p, ul, ol, pre, blockquote, .callout)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
 div:has(> :is(p, ul, ol, pre, blockquote, .callout, table, h1, h2, h3, h4, h5, h6)):has(+ .mod-footer) {
     margin-bottom: 1.5em;
 }
 /* remove the bottom-margin of the first line in read mode if it's before a heading */
+div:has(> :is(h1, h2, h3, h4, h5, h6)):has(+ .mod-footer):is(.is-collapsed),
 div:has(> :is(.inline-title, .frontmatter))+div:has(+ div > :is(h1, h2, h3, h4, h5, h6)) {
     margin-bottom: 0;
 }

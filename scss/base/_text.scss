@@ -7,24 +7,11 @@ The downside is that spaces at the end of the lines are lost from view */
 .markdown-preview-view a.external-link {
     word-break: break-all;
 }
-/* read mode tag paddings inside headings */
-.heading-collapse-indicator + a.tag {
-    --tag-padding-x: 0.5em;
-    --tag-padding-y: 0;
-}
-/* live preview tag paddings and position inside headings to match read mode */
-.HyperMD-header .cm-hashtag {
-    --tag-padding-y: 1.67px;
-    --tag-padding-x: 0.5em;
-    display: inline-block;
-    vertical-align: baseline;
-    transform: translateY(-2.5px);
-    font-size: var(--tag-size) !important;
-}
 /* keep text color when is highlighting in both modes */
 .is-flashing, .markdown-rendered mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight {
     color: inherit;
 }
+/* keep internal links text color when is highlighting in both modes  */
 .markdown-rendered mark .internal-link {
     color: var(--link-color);
 }

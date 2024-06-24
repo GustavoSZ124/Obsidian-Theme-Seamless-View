@@ -23,7 +23,11 @@ body.is-focused:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
 .nav-header {
     padding: var(--size-4-2) var(--size-4-2) 0;
 }
-/* reduce sidebar panels padding  */
+/* reduce file explorer padding */
+.nav-files-container {
+    padding: var(--size-2-1) var(--size-4-3) var(--size-4-6);
+}
+/* reduce other panels padding  */
 .backlink-pane, .tag-container,
 .workspace-leaf-content[data-type=outline] .view-content,
 .workspace-leaf-content[data-type=bookmarks] .view-content,

@@ -1,0 +1,4 @@
+/* iframe next to graph controls is the graph view, also applies to local graph view */
+iframe:has(+ .graph-controls) {
+    background-color: var(--graph-background);
+}
