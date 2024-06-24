@@ -1,8 +1,8 @@
 @charset "UTF-8";
 body {
-  --accent-h: 258;
-  --accent-s: 88%;
-  --accent-l: 66%;
+  --accent-h: 85;
+  --accent-s: 45%;
+  --accent-l: 40%;
   --background-primary: var(--color-base-25);
   --background-secondary: var(--color-base-00);
   --background-primary-alt: var(--color-base-30);
@@ -51,26 +51,36 @@ body {
 .theme-dark {
   --color-base-65: hsl(0, 0%, 64%);
   --color-base-65-rgb: 163, 163, 163;
-  --color-red-alt: hsl(355, 65%, 65%);
-  --color-red-alt-rgb: 224, 108, 117;
+  --color-red-alt: hsl(355, 65%, 70%);
+  --color-red-alt-rgb: 228, 129, 137;
+  --color-red-alt2: hsl(0, 80%, 30%);
+  --color-red-alt2-rgb: 138, 15, 15;
   --color-orange-alt: hsl(29, 54%, 61%);
   --color-orange-alt-rgb: 209, 154, 102;
-  --color-yellow: hsl(50, 65%, 58%);
-  --color-yellow-rgb: 218, 194, 78;
+  --color-yellow: hsl(50, 65%, 70%);
+  --color-yellow-rgb: 228, 212, 129;
   --color-green-alt: hsl(95, 38%, 62%);
   --color-green-alt-rgb: 152, 195, 121;
   --color-cyan-alt: hsl(170, 100%, 24%);
   --color-cyan-alt-rgb: 0, 122, 102;
   --color-cyan: hsl(187, 47%, 55%);
   --color-cyan-rgb: 86, 182, 194;
-  --color-blue: hsl(207, 82%, 66%);
-  --color-blue-rgb: 97, 175, 239;
+  --color-blue: hsl(207, 82%, 70%);
+  --color-blue-rgb: 116, 185, 241;
   --color-pink: hsl(286, 60%, 67%);
   --color-pink-rgb: 198, 120, 221;
   --hr-color: var(--color-base-40);
   --strike-color: var(--text-muted);
+  --bold-color: var(--color-red-alt);
+  --italic-color: var(--color-yellow);
   --table-border-color: var(--color-base-50);
-  --highlight-color: var(--color-cyan-alt-rgb);
+  --highlight-color: var(--color-red-alt2-rgb);
+  --h1-color: var(--color-red-alt);
+  --h2-color: var(--color-yellow);
+  --h3-color: var(--color-blue);
+  --h4-color: var(--color-orange-alt);
+  --h5-color: var(--color-green-alt);
+  --h6-color: var(--color-purple);
   --text-highlight-bg-rgb: var(--highlight-color);
 }
 
@@ -78,11 +88,6 @@ body {
 The downside is that spaces at the end of the lines are lost from view */
 .cm-sizer .cm-lineWrapping {
   white-space: normal;
-}
-
-/* read mode full links wrap to match live preview */
-.markdown-preview-view a.external-link {
-  word-break: break-all;
 }
 
 /* keep text color when is highlighting in both modes */
