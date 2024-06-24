@@ -2,7 +2,9 @@
 
 **Seamless View** is a custom CSS theme for Obsidian designed to provide a **unified and seamless experience** between the Live Preview and Read Mode, ensuring minimal visual differences when toggling between the two. This is particularly **useful for canvas elements** where cards have specific sizes, ensuring consistency in appearance when edit the content.
 
-![screenshot.png (512×288)](https://raw.githubusercontent.com/GustavoSZ124/Obsidian-Theme-Seamless-View/master/assets/screenshot.png)
+<p align="center">
+  <img src="assets/screenshot_hd.png" alt="screenshot" style="max-width: auto;">
+</p>
 
 ## Features
 

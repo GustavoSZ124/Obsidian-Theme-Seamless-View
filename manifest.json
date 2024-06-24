@@ -1,7 +1,9 @@
 {
 	"name": "Seamless View",
-	"version": "1.0.0",
-	"minAppVersion": "1.0.0",
 	"author": "Gustavo Salgado",
-	"authorUrl": "https://github.com/GustavoSZ124"
-}
+	"repo": "GustavoSZ124/Obsidian-Theme-Seamless-View",
+	"screenshot": "assets/screenshot.png",
+	"modes": ["dark"],
+	"version": "1.0.0",
+	"minAppVersion": "1.0.0"
+},
