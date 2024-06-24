@@ -3,10 +3,6 @@ The downside is that spaces at the end of the lines are lost from view */
 .cm-sizer .cm-lineWrapping {
     white-space: normal;
 }
-/* read mode full links wrap to match live preview */
-.markdown-preview-view a.external-link {
-    word-break: break-all;
-}
 /* keep text color when is highlighting in both modes */
 .is-flashing, .markdown-rendered mark, .cm-s-obsidian span.cm-formatting-highlight, .cm-s-obsidian span.cm-highlight {
     color: inherit;
