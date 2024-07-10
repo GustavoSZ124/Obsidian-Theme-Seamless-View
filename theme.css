@@ -9,28 +9,31 @@ body {
   --background-secondary-alt: var(--color-base-30);
   --titlebar-background: var(--background-secondary-alt);
   --titlebar-background-focused: var(--background-secondary);
-  --callout-padding: 8.2px 12px 8px 18px;
+  --callout-padding: 8.2px 12px 8px calc(1em + 2px);
   --callout-todo: var(--color-orange-rgb);
   --callout-important: var(--color-yellow-rgb);
   --callout-question: var(--color-green-alt-rgb);
   --canvas-space-x: 20px;
   --canvas-space-y: 16px;
-  --checkbox-indent: 0.4375em;
-  --checkbox-margin-inline-start: 0.3125em;
-  --checkbox-margin-inline-end: -0.1875em;
+  --checkbox-vertical-align: -2px;
+  --checkbox-indent-editing: 0.25em;
+  --checkbox-indent: calc(-1em - 2px);
+  --checkbox-end-margin-editing: calc(1.6px - 0.25em);
+  --checkbox-end-margin: 2px;
   --embed-padding: 0;
   --embed-border-start: none;
   --file-margins: 0 var(--size-4-8) var(--size-4-8);
   --header-height: 37px;
   --indentation-guide-reading-indent: -0.65em;
-  --indentation-guide-editing-indent: 0.45em;
+  --indentation-guide-editing-indent: calc(0.25em + 2.8px);
   --inline-title-margin-bottom: 4px;
   --inline-title-size: var(--h2-size);
   --inline-title-weight: var(--h2-weight);
   --inline-title-color: var(--text-muted);
   --list-spacing: 0;
-  --list-indent: 1.125em;
-  --list-indent-editing: calc(var(--list-indent) - 1.025em);
+  --list-indent: calc(1em + 2px);
+  --list-indent-editing: calc(var(--list-indent) - 1.03em);
+  --list-bullet-size: 0.3125em;
   --list-bullet-end-padding: 1.2rem;
   --metadata-background: var(--background-primary-alt);
   --metadata-padding: 0;
@@ -46,9 +49,16 @@ body {
   --h1-line-height: normal;
   --h2-line-height: normal;
   --h3-line-height: normal;
+  --lc-bg-left: 17px;
+  --lc-bg-left-reading: 19px;
+  --lc-bg-top-reading: 1px;
+  --lc-bg-right-reading: 1px;
+  --lc-bg-bottom-reading: 1px;
 }
 
 .theme-dark {
+  --color-accent: hsl(85, 45%, 40%);
+  --color-accent-rgb: 110, 148, 56;
   --color-base-65: hsl(0, 0%, 64%);
   --color-base-65-rgb: 163, 163, 163;
   --color-red-alt: hsl(355, 65%, 70%);
@@ -81,6 +91,14 @@ body {
   --h4-color: var(--color-orange-alt);
   --h5-color: var(--color-green-alt);
   --h6-color: var(--color-purple);
+  --code-function: var(--color-blue);
+  --code-operator: var(--color-cyan);
+  --code-property: var(--color-red-alt);
+  --code-punctuation: var(--color-orange-alt);
+  --code-string: var(--color-green-alt);
+  --code-tag: var(--color-red-alt);
+  --code-value: var(--color-orange-alt);
+  --canvas-color-6: var(--color-accent-rgb);
   --text-highlight-bg-rgb: var(--highlight-color);
 }
 
@@ -111,8 +129,8 @@ div:has(> p):has(+ div > :is(p)),
 div:has(> pre:not(.frontmatter)):has(+ div > :is(pre, blockquote, .callout)),
 div:has(> :is(ul, ol)):has(+ div > :is(p, blockquote, .callout)),
 div:has(> :is(blockquote, .callout)):has(+ div > :is(p, .callout):not(.admonition)),
-div:has(> :is(p, ul, ol, pre, blockquote, .callout)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
-div:has(> :is(p, ul, ol, pre, blockquote, .callout, table, h1, h2, h3, h4, h5, h6)):has(+ .mod-footer) {
+div:has(> :is(p, ul, ol, pre, div, blockquote, .callout)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
+div:has(> :is(p, ul, ol, pre, blockquote, .callout, table, div, h1, h2, h3, h4, h5, h6)):has(+ .mod-footer) {
   margin-bottom: 1.5em;
 }
 
@@ -196,7 +214,7 @@ body.is-focused:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
 
 /* add document icon to properties title */
 .metadata-properties-title {
-  padding-inline-start: 16px;
+  padding-inline-start: 12px;
   color: var(--text-muted);
 }
 .metadata-properties-title::before {
@@ -347,13 +365,20 @@ hr, .markdown-rendered hr {
 }
 
 /* center checkbox in read mode */
-.markdown-preview-view .task-list-item-checkbox {
-  left: var(--checkbox-indent);
+.markdown-preview-view .task-list-item .task-list-item-checkbox {
+  vertical-align: middle;
+  font-size: var(--font-text-size);
+  top: var(--checkbox-vertical-align);
+  margin-inline-start: var(--checkbox-indent);
+  margin-inline-end: var(--checkbox-end-margin);
 }
 
 /* manage live preview space between checkbox and text with a new variable */
 .markdown-source-view.mod-cm6 .task-list-item-checkbox {
-  margin-inline-end: var(--checkbox-margin-inline-end);
+  font-size: var(--font-text-size);
+  top: var(--checkbox-vertical-align);
+  margin-inline-start: var(--checkbox-indent-editing);
+  margin-inline-end: var(--checkbox-end-margin-editing);
 }
 
 /* match the size of different number lists */
@@ -375,6 +400,17 @@ hr, .markdown-rendered hr {
   inset-inline-end: calc(4px - var(--list-bullet-end-padding));
 }
 
+/* live preview blockquote's padding to see the cursor */
+.cm-s-obsidian span.cm-formatting-quote:first-child {
+  padding-inline-start: 2.4px;
+}
+
+/* read mode blockquote margin and padding to match live preview */
+.markdown-preview-view blockquote {
+  padding-inline-start: calc(1em + 0.4px);
+  margin: 0;
+}
+
 /* callout wrap break words and hide scrollbar to match read mode */
 .callout {
   overflow-wrap: break-word;
@@ -384,32 +420,17 @@ hr, .markdown-rendered hr {
   overflow: hidden;
 }
 
-/* read mode blockquote margin and padding to match live preview */
-.markdown-preview-view blockquote {
-  padding-inline-start: 17px;
+/* remove callout margins inside callouts in both modes */
+.markdown-preview-view .callout-content .callout,
+.markdown-source-view.mod-cm6 .callout-content .callout {
   margin: 0;
-}
-
-/* blockquote's padding to see the cursor */
-.cm-s-obsidian span.cm-formatting-quote {
-  padding-inline-start: 3px;
-}
-
-/* remove live preview callout margin inside callouts */
-.markdown-rendered .callout .callout-content .callout {
-  margin: 0;
-}
-
-/* align read mode checkboxes inside callouts */
-.markdown-preview-view .callout .task-list-item-checkbox {
-  --checkbox-indent: 0.5em;
 }
 
 /* live preview lists inside callouts to match read mode */
 .markdown-source-view .callout ul > li::marker {
   color: transparent;
 }
-.markdown-source-view .callout ul:not(.contains-task-list) > li::before {
+.markdown-source-view .callout ul > li:not(.task-list-item)::before {
   position: absolute;
   content: "​";
   pointer-events: none;
@@ -418,14 +439,14 @@ hr, .markdown-rendered hr {
   width: var(--list-bullet-size);
   height: var(--list-bullet-size);
   border: var(--list-bullet-border);
-  transform: translate(-0.76em, 0.6em);
+  transform: translate(-0.8em, 0.6em);
   background-color: var(--list-marker-color);
   transition: transform 0.15s, box-shadow 0.15s;
   will-change: transform;
 }
 .markdown-source-view .callout .task-list-item-checkbox {
-  --checkbox-margin-inline-start: -1.35em;
-  --checkbox-margin-inline-end: 0.15em;
+  --checkbox-indent-editing: -1.1em;
+  --checkbox-end-margin-editing: calc(0.125em - 0.5px);
 }
 
 /* codeblocks rendered inside callouts */
@@ -433,12 +454,14 @@ hr, .markdown-rendered hr {
   padding-bottom: 13px;
 }
 .markdown-rendered .callout pre {
-  padding: 0;
+  padding: 0 0 0 1px;
 }
 
 /* change read mode codeblock sizes to match live preview */
 .markdown-rendered pre {
-  padding: 1.3125em var(--size-4-3) 1.3125em var(--size-4-4);
+  padding: 1.3125em var(--size-4-3) 1.3125em 18px;
+  min-height: fit-content;
+  overflow: hidden;
   margin: 0;
 }
 .markdown-rendered pre code {
@@ -447,6 +470,7 @@ hr, .markdown-rendered hr {
 
 /* live preview codeblock inline end padding to match read mode */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+  padding-inline-start: 18px;
   padding-inline-end: 12px;
 }
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock .collapse-indicator {
@@ -455,7 +479,7 @@ hr, .markdown-rendered hr {
 
 /* read mode codeblock copy button */
 .markdown-rendered button.copy-code-button {
-  padding: 4px 6px;
+  padding: 2.5px 6px;
   margin: 0 4px;
 }
 
@@ -463,6 +487,7 @@ hr, .markdown-rendered hr {
 .markdown-source-view.mod-cm6 .code-block-flair {
   padding: var(--size-4-1) var(--size-4-1) 0;
   top: 0;
+  right: 1px;
 }
 
 /* css/scss syntax colors */
@@ -509,7 +534,7 @@ pre.language-js, pre.language-jsx {
 }
 
 /* read mode table margins to match live preview except inside callouts */
-.markdown-preview-view :not(.callout-content) > table {
+.markdown-preview-view :not(.callout-content, span) > table {
   margin: var(--size-4-4) 0;
 }
 
@@ -550,6 +575,111 @@ pre.language-js, pre.language-jsx {
   margin-right: auto !important;
   margin-left: auto !important;
   display: block;
+}
+
+/* match live preview dataview line height with read mode */
+.is-live-preview .block-language-dataviewjs > p,
+.is-live-preview .block-language-dataviewjs > span {
+  line-height: var(--line-height-normal);
+}
+
+/* change bullet points style */
+.block-language-dataview ul > li::marker, .block-language-dataviewjs ul > li::marker {
+  color: transparent;
+}
+.block-language-dataview ul > li:not(.task-list-item)::before, .block-language-dataviewjs ul > li:not(.task-list-item)::before {
+  position: absolute;
+  content: "​";
+  pointer-events: none;
+  color: var(--list-marker-color);
+  border-radius: var(--list-bullet-radius);
+  width: var(--list-bullet-size);
+  height: var(--list-bullet-size);
+  border: var(--list-bullet-border);
+  transform: translate(-0.8em, 0.6em);
+  background-color: var(--list-marker-color);
+  transition: transform 0.15s, box-shadow 0.15s;
+  will-change: transform;
+}
+
+/* remove admonition callouts extra margin */
+.is-live-preview .admonition-content:last-child,
+.is-live-preview .admonition-content p {
+  margin: 0;
+}
+
+/* limit the height of admonition icons to match native callouts */
+.admonition-title-icon {
+  max-height: 20.8px;
+}
+
+/* remove admonition button extra margin */
+.admonition-content-copy {
+  margin: 0;
+}
+
+/* remove rounded edges */
+.lc-list-bg::after, .lc-li-wrapper::after {
+  border-radius: 0;
+}
+
+/* change font weight inside list callouts */
+div.lc-list-callout, span.lc-li-wrapper {
+  color: rgb(var(--lc-callout-color));
+  font-weight: var(--font-semibold);
+}
+div.lc-list-callout .cm-hashtag, div.lc-list-callout .tag, div.lc-list-callout .inline-field, span.lc-li-wrapper .cm-hashtag, span.lc-li-wrapper .tag, span.lc-li-wrapper .inline-field {
+  font-weight: var(--font-normal);
+}
+
+/* remove extra padding */
+.kanban-plugin__board > div {
+  padding: 0 0 12px;
+}
+
+/* change margin to inline start for kanban list */
+.kanban-plugin__lane-wrapper {
+  margin-inline-start: 10px;
+  margin-inline-end: 0;
+}
+.kanban-plugin__lane-wrapper:nth-last-child(2) {
+  margin-inline-end: 10px;
+}
+
+/* remove placeholder margin */
+.kanban-plugin__placeholder.kanban-plugin__lane-placeholder {
+  margin-inline-end: 0;
+}
+
+/* lane title orientation when it is collapsed */
+.kanban-plugin__lane-wrapper.collapse-horizontal .kanban-plugin__lane-header-wrapper {
+  text-orientation: upright;
+}
+.kanban-plugin__lane-wrapper.collapse-horizontal .kanban-plugin__lane-title-text,
+.kanban-plugin__lane-wrapper.collapse-horizontal .kanban-plugin__lane-title-count {
+  transform: none;
+}
+
+/* reduce QuickAdd settings */
+.modal-content > .setting-item {
+  padding: 0.2em 0;
+}
+.modal-content > .setting-item:first-child {
+  padding-top: 0;
+}
+.modal-content > .setting-item:last-child {
+  padding-bottom: 0;
+}
+
+/* change QuickAdd user settings inputs width */
+.userScriptSettingsModal .setting-item-info {
+  width: 40%;
+}
+.userScriptSettingsModal .setting-item-control {
+  width: 60%;
+}
+.userScriptSettingsModal .setting-item-control input {
+  width: 100%;
 }
 
 /*# sourceMappingURL=theme.css.map */
