@@ -1,0 +1,10 @@
+@use '../utils' as *;
+/* match live preview dataview line height with read mode */
+.is-live-preview .block-language-dataviewjs>p,
+.is-live-preview .block-language-dataviewjs>span {
+    line-height: var(--line-height-normal);
+}
+/* change bullet points style */
+.block-language-dataview, .block-language-dataviewjs {
+    @include bullet-point;
+}

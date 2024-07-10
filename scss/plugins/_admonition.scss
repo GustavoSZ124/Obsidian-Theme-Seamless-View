@@ -1,0 +1,13 @@
+/* remove admonition callouts extra margin */
+.is-live-preview .admonition-content:last-child,
+.is-live-preview .admonition-content p {
+    margin: 0;
+}
+/* limit the height of admonition icons to match native callouts */
+.admonition-title-icon {
+    max-height: 20.8px;
+}
+/* remove admonition button extra margin */
+.admonition-content-copy {
+    margin: 0;
+}

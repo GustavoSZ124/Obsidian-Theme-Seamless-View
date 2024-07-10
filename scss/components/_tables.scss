@@ -11,7 +11,7 @@
     height: calc(var(--table-text-size) * var(--table-line-height) + 8px);
 }
 /* read mode table margins to match live preview except inside callouts */
-.markdown-preview-view :not(.callout-content) > table {
+.markdown-preview-view :not(.callout-content, span) > table {
     margin: var(--size-4-4) 0;
 }
 /* change first column bold color to match header color in both modes */

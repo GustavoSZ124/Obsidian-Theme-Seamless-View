@@ -1,0 +1,12 @@
+/* remove rounded edges */
+.lc-list-bg::after, .lc-li-wrapper::after{
+    border-radius: 0;
+}
+/* change font weight inside list callouts */
+div.lc-list-callout, span.lc-li-wrapper {
+    color: rgb(var(--lc-callout-color));
+    font-weight: var(--font-semibold);
+    .cm-hashtag, .tag, .inline-field {
+        font-weight: var(--font-normal);
+    }
+}

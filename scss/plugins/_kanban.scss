@@ -1,0 +1,26 @@
+/* remove extra padding */
+.kanban-plugin__board > div {
+    padding: 0 0 12px;
+}
+/* change margin to inline start for kanban list */
+.kanban-plugin__lane-wrapper {
+    margin-inline-start: 10px;
+    margin-inline-end: 0;
+    &:nth-last-child(2) {
+        margin-inline-end: 10px;
+    }
+}
+/* remove placeholder margin */
+.kanban-plugin__placeholder.kanban-plugin__lane-placeholder {
+    margin-inline-end: 0;
+}
+/* lane title orientation when it is collapsed */
+.kanban-plugin__lane-wrapper.collapse-horizontal {
+    .kanban-plugin__lane-header-wrapper {
+        text-orientation: upright;
+    }
+    .kanban-plugin__lane-title-text,
+    .kanban-plugin__lane-title-count {
+        transform: none;
+    }
+}
