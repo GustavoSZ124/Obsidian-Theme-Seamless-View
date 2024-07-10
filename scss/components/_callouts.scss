@@ -1,4 +1,13 @@
 @use '../utils' as *;
+/* live preview blockquote's padding to see the cursor */
+.cm-s-obsidian span.cm-formatting-quote:first-child {
+    padding-inline-start: 2.4px;
+}
+/* read mode blockquote margin and padding to match live preview */
+.markdown-preview-view blockquote {
+    padding-inline-start: calc(1em + 0.4px);
+    margin: 0;
+}
 /* callout wrap break words and hide scrollbar to match read mode */
 .callout {
     overflow-wrap: break-word;
@@ -7,29 +16,17 @@
         overflow: hidden;
     }
 }
-/* read mode blockquote margin and padding to match live preview */
-.markdown-preview-view blockquote {
-    padding-inline-start: 17px;
+/* remove callout margins inside callouts in both modes */
+.markdown-preview-view .callout-content .callout,
+.markdown-source-view.mod-cm6 .callout-content .callout {
     margin: 0;
-}
-/* blockquote's padding to see the cursor */
-.cm-s-obsidian span.cm-formatting-quote {
-    padding-inline-start: 3px;
-}
-/* remove live preview callout margin inside callouts */
-.markdown-rendered .callout .callout-content .callout {
-    margin: 0;
-}
-/* align read mode checkboxes inside callouts */
-.markdown-preview-view .callout .task-list-item-checkbox {
-    --checkbox-indent: 0.5em;
 }
 /* live preview lists inside callouts to match read mode */
 .markdown-source-view .callout {
     @include bullet-point;
-    .task-list-item-checkbox{
-        --checkbox-margin-inline-start: -1.35em;
-        --checkbox-margin-inline-end: 0.15em;
+    .task-list-item-checkbox {
+        --checkbox-indent-editing: -1.1em;
+        --checkbox-end-margin-editing: calc(0.125em - 0.5px);
     }
 }
 /* codeblocks rendered inside callouts */
@@ -38,6 +35,6 @@
         padding-bottom: 13px;
     }
     pre{
-        padding: 0;
+        padding: 0 0 0 1px;
     }
 }
