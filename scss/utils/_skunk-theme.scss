@@ -1,6 +1,7 @@
 $accent-color: hsl(85, 45%, 40%);
 
 $colors: (
+    'accent': $accent-color,
     'base-65': hsl(0, 0%, 64%),
     'red-alt': hsl(355, 65%, 70%),
     'red-alt2': hsl(0, 80%, 30%),
@@ -51,3 +52,5 @@ $code-syntax: (
     'tag': --color-red-alt,
     'value': --color-orange-alt,
 );
+
+$canvas-colors: ('color-6': --color-accent-rgb);

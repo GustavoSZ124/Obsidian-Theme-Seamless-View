@@ -12,7 +12,7 @@
 }
 /* add document icon to properties title */
 .metadata-properties-title {
-    padding-inline-start: 16px;
+    padding-inline-start: 12px;
     color: var(--text-muted);
     &::before {
         align-items: center;
@@ -29,6 +29,6 @@ div:has(> .frontmatter), div:has(> .cm-hmd-frontmatter),
     background-color: var(--metadata-background);
 }
 /* change tag padding y inside properties */
-.metadata-property[data-property-key=tags]{
+.metadata-property[data-property-key=tags] {
     --tag-padding-y: 0.25em;
 }
