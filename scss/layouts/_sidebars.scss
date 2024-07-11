@@ -6,12 +6,13 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     border-top: none;
     order: 0;
 }
-/* change Vault menu background on focus */
+/* change Vault menu background on focus to match titlebar */
 body.is-focused:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
     background-color: var(--titlebar-background-focused);
 }
-/* keep left sidebar tabs background color when isn't focus */
-.mod-left-split .workspace-tabs.mod-top {
+/* keep the same background color of the top left sidebar tabs */
+.mod-left-split .workspace-tabs.mod-top,
+body.is-focused .workspace-tabs.mod-top-left-space {
     --tab-container-background: var(--background-secondary);
     @include thin-border('-top');
 }

@@ -1,0 +1,74 @@
+$accent-color: hsl(180, 100%, 25%);
+
+$base-colors: (
+    '00': hsl(40, 90%, 80%),
+    '10': hsl(36, 85%, 76%),
+    '20': hsl(35, 80%, 72%),
+    '25': hsl(32, 80%, 70%),
+    '30': hsl(32, 70%, 60%),
+    '35': hsl(30, 60%, 55%),
+    '40': hsl(30, 40%, 50%),
+    '50': hsl(20, 35%, 45%),
+    '70': hsl(20, 30%, 35%),
+    '100': hsl(10, 20%, 15%),
+);
+
+$colors: (
+    'accent': $accent-color,
+    'code-alt': rgb(194, 94, 0),
+    'red': hsl(353, 81%, 40%),
+    'yellow': hsl(45, 40%, 40%),
+    'orange': hsl(35, 100%, 40%),
+    'green': hsl(70, 100%, 25%),
+    'cyan': hsl(180, 100%, 25%),
+    'cyan-alt': hsl(185, 70%, 65%),
+    'blue': hsl(200, 90%, 30%),
+    'blue-alt': hsl(210,90%,45%),
+    'purple': hsl(285, 65%, 50%),
+    'pink': hsl(331, 65%, 53%),
+);
+
+$backgrounds: (
+    'background': (
+        'primary': --color-base-10,
+        'secondary': --color-base-25,
+        'primary-alt': --color-base-20,
+        'secondary-alt': --color-base-20,
+    ),
+    'titlebar': (
+        'background': --background-secondary-alt,
+        'background-focused': --background-secondary,
+    )
+);
+
+$tag-colors: (
+    'hr': --color-base-40,
+    'strike': --text-muted,
+    'bold': --color-blue,
+    'italic': --color-red,
+    'table-border': --color-base-50,
+    'highlight': --color-cyan-alt-rgb,
+    'canvas': --color-orange-rgb,
+);
+
+$heading-colors: (
+    'h1': --color-red,
+    'h2': --color-green,
+    'h3': --color-blue,
+    'h4': --color-purple,
+    'h5': --color-pink,
+    'h6': --color-orange,
+);
+
+$code-syntax: (
+    'function': --color-blue-alt,
+    'keyword': --color-purple,
+    'operator': --color-cyan,
+    'property': --color-red,
+    'punctuation': --color-orange,
+    'string': --color-green,
+    'tag': --color-red,
+    'value': --color-orange,
+);
+
+$canvas-colors: ('color-6': --color-accent-rgb);

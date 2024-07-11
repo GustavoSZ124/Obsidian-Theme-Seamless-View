@@ -1,11 +1,12 @@
 @use '../utils' as *;
-@use '../utils/skunk-theme' as *;
+@use '../utils/egyptian-theme' as *;
 
-.theme-dark {
+.theme-light {
     --accent-h: #{strip-units(hue($accent-color))};
     --accent-s: #{saturation($accent-color)};
     --accent-l: #{lightness($accent-color)};
 
+    @include single-map-css-vars($base-colors, $prefix: 'color-base-');
     @include colors($colors);
     @include double-map-css-vars($backgrounds, true);
     @include single-map-css-vars($tag-colors, $suffix: '-color', $var: true);

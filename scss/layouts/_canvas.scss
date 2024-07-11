@@ -24,8 +24,8 @@
     scrollbar-gutter: stable;
 }
 /* read mode canvas metadata space for cards and notes */
-.canvas-node-content .markdown-preview-pusher+div:has(pre),
-.canvas-node-content div:has(.inline-title)+div:has(pre) {
+.canvas-node-content .markdown-preview-pusher + div:has(pre),
+.canvas-node-content div:has(.inline-title) + div:has(pre) {
     padding-bottom: 24px;
 }
 /* match live preview and read mode padding in canvas cards */
@@ -55,7 +55,7 @@
     &>table:last-child {
             margin-bottom: var(--size-4-4);
         }
-    &:has(> table){
+    &:has(> table) {
         padding-bottom: 1.5em;
     }
 }

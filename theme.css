@@ -1,14 +1,5 @@
 @charset "UTF-8";
 body {
-  --accent-h: 85;
-  --accent-s: 45%;
-  --accent-l: 40%;
-  --background-primary: var(--color-base-25);
-  --background-secondary: var(--color-base-00);
-  --background-primary-alt: var(--color-base-30);
-  --background-secondary-alt: var(--color-base-30);
-  --titlebar-background: var(--background-secondary-alt);
-  --titlebar-background-focused: var(--background-secondary);
   --callout-padding: 8.2px 12px 8px calc(1em + 2px);
   --callout-todo: var(--color-orange-rgb);
   --callout-important: var(--color-yellow-rgb);
@@ -56,11 +47,81 @@ body {
   --lc-bg-bottom-reading: 1px;
 }
 
+.theme-light {
+  --accent-h: 180;
+  --accent-s: 100%;
+  --accent-l: 25%;
+  --color-base-00: hsl(40, 90%, 80%);
+  --color-base-10: hsl(36, 85%, 76%);
+  --color-base-20: hsl(35, 80%, 72%);
+  --color-base-25: hsl(32, 80%, 70%);
+  --color-base-30: hsl(32, 70%, 60%);
+  --color-base-35: hsl(30, 60%, 55%);
+  --color-base-40: hsl(30, 40%, 50%);
+  --color-base-50: hsl(20, 35%, 45%);
+  --color-base-70: hsl(20, 30%, 35%);
+  --color-base-100: hsl(10, 20%, 15%);
+  --color-accent: hsl(180, 100%, 25%);
+  --color-accent-rgb: 0, 128, 128;
+  --color-code-alt: rgb(194, 94, 0);
+  --color-code-alt-rgb: 194, 94, 0;
+  --color-red: hsl(353, 81%, 40%);
+  --color-red-rgb: 185, 19, 39;
+  --color-yellow: hsl(45, 40%, 40%);
+  --color-yellow-rgb: 143, 122, 61;
+  --color-orange: hsl(35, 100%, 40%);
+  --color-orange-rgb: 204, 119, 0;
+  --color-green: hsl(70, 100%, 25%);
+  --color-green-rgb: 106, 128, 0;
+  --color-cyan: hsl(180, 100%, 25%);
+  --color-cyan-rgb: 0, 128, 128;
+  --color-cyan-alt: hsl(185, 70%, 65%);
+  --color-cyan-alt-rgb: 103, 218, 228;
+  --color-blue: hsl(200, 90%, 30%);
+  --color-blue-rgb: 8, 99, 145;
+  --color-blue-alt: hsl(210, 90%, 45%);
+  --color-blue-alt-rgb: 11, 115, 218;
+  --color-purple: hsl(285, 65%, 50%);
+  --color-purple-rgb: 169, 45, 210;
+  --color-pink: hsl(331, 65%, 53%);
+  --color-pink-rgb: 213, 57, 133;
+  --background-primary: var(--color-base-10);
+  --background-secondary: var(--color-base-25);
+  --background-primary-alt: var(--color-base-20);
+  --background-secondary-alt: var(--color-base-20);
+  --titlebar-background: var(--background-secondary-alt);
+  --titlebar-background-focused: var(--background-secondary);
+  --hr-color: var(--color-base-40);
+  --strike-color: var(--text-muted);
+  --bold-color: var(--color-blue);
+  --italic-color: var(--color-red);
+  --table-border-color: var(--color-base-50);
+  --highlight-color: var(--color-cyan-alt-rgb);
+  --canvas-color: var(--color-orange-rgb);
+  --h1-color: var(--color-red);
+  --h2-color: var(--color-green);
+  --h3-color: var(--color-blue);
+  --h4-color: var(--color-purple);
+  --h5-color: var(--color-pink);
+  --h6-color: var(--color-orange);
+  --code-function: var(--color-blue-alt);
+  --code-keyword: var(--color-purple);
+  --code-operator: var(--color-cyan);
+  --code-property: var(--color-red);
+  --code-punctuation: var(--color-orange);
+  --code-string: var(--color-green);
+  --code-tag: var(--color-red);
+  --code-value: var(--color-orange);
+  --canvas-color-6: var(--color-accent-rgb);
+  --text-highlight-bg-rgb: var(--highlight-color);
+}
+
 .theme-dark {
+  --accent-h: 85;
+  --accent-s: 45%;
+  --accent-l: 40%;
   --color-accent: hsl(85, 45%, 40%);
   --color-accent-rgb: 110, 148, 56;
-  --color-base-65: hsl(0, 0%, 64%);
-  --color-base-65-rgb: 163, 163, 163;
   --color-red-alt: hsl(355, 65%, 70%);
   --color-red-alt-rgb: 228, 129, 137;
   --color-red-alt2: hsl(0, 80%, 30%);
@@ -79,6 +140,14 @@ body {
   --color-blue-rgb: 116, 185, 241;
   --color-pink: hsl(286, 60%, 67%);
   --color-pink-rgb: 198, 120, 221;
+  --color-code-alt: rgb(160, 160, 160);
+  --color-code-alt-rgb: 160, 160, 160;
+  --background-primary: var(--color-base-25);
+  --background-secondary: var(--color-base-00);
+  --background-primary-alt: var(--color-base-30);
+  --background-secondary-alt: var(--color-base-30);
+  --titlebar-background: var(--background-secondary-alt);
+  --titlebar-background-focused: var(--background-secondary);
   --hr-color: var(--color-base-40);
   --strike-color: var(--text-muted);
   --bold-color: var(--color-red-alt);
@@ -164,13 +233,14 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
   order: 0;
 }
 
-/* change Vault menu background on focus */
+/* change Vault menu background on focus to match titlebar */
 body.is-focused:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
   background-color: var(--titlebar-background-focused);
 }
 
-/* keep left sidebar tabs background color when isn't focus */
-.mod-left-split .workspace-tabs.mod-top {
+/* keep the same background color of the top left sidebar tabs */
+.mod-left-split .workspace-tabs.mod-top,
+body.is-focused .workspace-tabs.mod-top-left-space {
   --tab-container-background: var(--background-secondary);
   border-top: var(--tab-outline-width) solid var(--tab-outline-color);
 }
@@ -219,7 +289,7 @@ body.is-focused:not(.is-mobile) .workspace-split.mod-left-split .workspace-sided
 }
 .metadata-properties-title::before {
   align-items: center;
-  content: "📄";
+  content: "📜";
 }
 
 /* align metadata collapse indicator */

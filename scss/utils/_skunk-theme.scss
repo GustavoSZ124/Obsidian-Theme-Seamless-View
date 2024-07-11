@@ -2,7 +2,6 @@ $accent-color: hsl(85, 45%, 40%);
 
 $colors: (
     'accent': $accent-color,
-    'base-65': hsl(0, 0%, 64%),
     'red-alt': hsl(355, 65%, 70%),
     'red-alt2': hsl(0, 80%, 30%),
     'orange-alt': hsl(29, 54%, 61%),
@@ -12,15 +11,18 @@ $colors: (
     'cyan': hsl(187, 47%, 55%),
     'blue': hsl(207, 82%, 70%),
     'pink': hsl(286, 60%, 67%),
+    'code-alt': rgb(160, 160, 160),
 );
 
 $backgrounds: (
-    'background': ('primary': --color-base-25,
+    'background': (
+        'primary': --color-base-25,
         'secondary': --color-base-00,
         'primary-alt': --color-base-30,
         'secondary-alt': --color-base-30,
     ),
-    'titlebar': ('background': --background-secondary-alt,
+    'titlebar': (
+        'background': --background-secondary-alt,
         'background-focused': --background-secondary,
     )
 );

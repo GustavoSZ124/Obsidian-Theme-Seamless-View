@@ -1,5 +1,5 @@
 /* remove rounded edges */
-.lc-list-bg::after, .lc-li-wrapper::after{
+.lc-list-bg::after, .lc-li-wrapper::after {
     border-radius: 0;
 }
 /* change font weight inside list callouts */
