@@ -1,6 +1,6 @@
 # Seamless View Theme for Obsidian
 
-**Seamless View** is a custom CSS theme for Obsidian designed to provide a **unified and seamless experience** between the Live Preview and Read Mode, ensuring minimal visual differences when toggling between the two. This is particularly **useful for canvas elements** where cards have specific sizes, ensuring consistency in appearance when edit the content.
+Seamless View is a minimalist theme designed to **reduce the differences** between live preview mode and read mode. This provides a **seamless experience** when editing elements within a canvas, ensuring **consistency of card sizes**.
 
 <p align="center">
   <img src="assets/Seamless View HD.png" alt="screenshot" style="max-width: auto;">
@@ -8,21 +8,37 @@
 
 ## Features
 
--   **Seamless Transition**: With Seamless View, you'll hardly notice the difference between reading mode and live preview mode. This allows for an uninterrupted flow of thoughts as you write and review your notes.
--   **Plugin Support**: Includes custom styles for several popular plugins, including Dataview, QuickAdd, Kanban, Tasks, and more, to ensure a cohesive look across your Obsidian setup.
--   **Customization:** While the core design promotes a seamless experience, you can still personalize various aspects of the theme to suit your preferences.
+-   **Minimalist**: Reduces several unnecessary spaces, hides the mandatory empty line before any table, and adjusts the canvas menu to better utilize space.
+-   **Dark mode**: A low-contrast dark mode that can be used during the day with warm colors for the night.
+-   **Light mode**: A light mode inspired by Egyptian papyrus with warm colors to avoid straining the eyes.
+-   **Newlines in read mode**: A `margin-bottom` of 1em between key elements to emulate empty lines from the live preview and keep the elements spaced out.
+    -   between paragraphs, including embeddings.
+        -   between a code block and other blocks, blockquotes, and callouts
+    -   between a list and paragraphs, blockquotes, and callouts.
+    -   between a blockquote or callout and other blockquotes, callouts, and paragraphs.
+    -   between all the above elements and headers.
+    -   between all the above elements and the end of the document.
+
+<p align="center">
+  <img src="assets/Dark Theme.png" alt="dark theme" style="max-width: auto;">
+</p>
+<p align="center">
+  <img src="assets/Light Theme.png" alt="light theme" style="max-width: auto;">
+</p>
+
+## Plugin Styles Changes
+
+-   [Admonition](https://github.com/javalent/admonitions): some extra spaces were removed (no `margin-bottom` is added to the element preceding an admonition in read mode).
+-   [Dataview](https://github.com/blacksmithgu/obsidian-dataview): the `line-height` of dataview blocks in live preview mode and the style of bullet points in both modes were made consistent
+-   [Kanban](https://github.com/mgmeyers/obsidian-kanban): some extra spaces were removed in board view.
+-   [List Callouts](https://github.com/mgmeyers/obsidian-list-callouts): the background was aligned between both modes, and the color and thickness of the text were changed.
+-   [QuickAdd](https://github.com/chhoumann/quickadd): the space in the settings of the commands was reduced.
 
 ## Installation
 
 1. Open Obsidian and go to **Settings > Appearance**.
-2. Click on the **Themes** tab.
-3. Click on the **Community Themes** button.
-4. Search for **Seamless View** and click on the **Install** button.
-5. Click on the **Use** button to activate the theme.
-
-## Usage
-
-Once installed, simply switch between reading mode and live preview mode to appreciate the seamless transition between the two. Customize the theme further according to your preferences by tweaking the CSS variables in the `seamless-view.css` file.
+2. Click on the **Manage** button under the **Themes** section.
+3. Search for **Seamless View** and click on the **Install and use** button.
 
 ## Support
 
