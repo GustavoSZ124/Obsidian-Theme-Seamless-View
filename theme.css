@@ -23,7 +23,7 @@ body {
   --inline-title-color: var(--text-muted);
   --list-spacing: 0;
   --list-indent: calc(1em + 2px);
-  --list-indent-editing: calc(var(--list-indent) - 1.03em);
+  --list-indent-editing: 0;
   --list-bullet-size: 0.3125em;
   --list-bullet-end-padding: 1.2rem;
   --metadata-background: var(--background-primary-alt);
@@ -198,14 +198,14 @@ div:has(> p):has(+ div > :is(p)),
 div:has(> pre:not(.frontmatter)):has(+ div > :is(pre, blockquote, .callout)),
 div:has(> :is(ul, ol)):has(+ div > :is(p, blockquote, .callout)),
 div:has(> :is(blockquote, .callout)):has(+ div > :is(p, .callout):not(.admonition)),
-div:not(.mod-header):has(> :is(p, ul, ol, pre, blockquote, .callout, div)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
+div:has(> :is(p, ul, ol, pre, blockquote, .callout, div)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
 div:has(> :is(p, ul, ol, pre, blockquote, .callout, table, div, h1, h2, h3, h4, h5, h6)):has(+ .mod-footer) {
   margin-bottom: 1.5em;
 }
 
 /* remove the bottom-margin of the first line in read mode if it's before a heading */
 div:has(> :is(h1, h2, h3, h4, h5, h6)):has(+ .mod-footer):is(.is-collapsed),
-div:has(> :is(.inline-title, .frontmatter)) + div:has(+ div > :is(h1, h2, h3, h4, h5, h6)) {
+div:has(> :is(.inline-title, .frontmatter)):has(+ div > :is(h1, h2, h3, h4, h5, h6)) {
   margin-bottom: 0;
 }
 
@@ -430,7 +430,7 @@ hr, .markdown-rendered hr {
 
 /* center bullet point in live preview */
 .markdown-source-view .list-bullet {
-  padding-inline-start: 0.2em;
+  padding-inline-start: calc(var(--list-indent) - 0.83em);
   padding-inline-end: 0.15em;
 }
 
@@ -451,10 +451,12 @@ hr, .markdown-rendered hr {
   margin-inline-end: var(--checkbox-end-margin-editing);
 }
 
-/* match the size of different number lists */
-.list-number {
-  display: inline-flex;
-  width: 1.03em;
+/* align live preview number list to match read move */
+.cm-formatting-list-ol {
+  display: inline-block;
+  margin-inline-start: calc(-1.5em - 9px);
+  text-align: right;
+  width: 3.2em;
 }
 
 /* align read mode list collapse indicator */
@@ -517,6 +519,11 @@ hr, .markdown-rendered hr {
 .markdown-source-view .callout .task-list-item-checkbox {
   --checkbox-indent-editing: -1.1em;
   --checkbox-end-margin-editing: calc(0.125em - 0.5px);
+}
+
+/* increase number list indent inside callouts to see numbers with 2 digits */
+.markdown-rendered .callout ol > li {
+  --list-indent: calc(1em + 9px);
 }
 
 /* codeblocks rendered inside callouts */

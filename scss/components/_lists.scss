@@ -4,7 +4,7 @@
 }
 /* center bullet point in live preview */
 .markdown-source-view .list-bullet {
-    padding-inline-start: 0.2em;
+    padding-inline-start: calc(var(--list-indent) - 0.83em);
     padding-inline-end: 0.15em;
 }
 /* center checkbox in read mode */
@@ -22,10 +22,12 @@
     margin-inline-start: var(--checkbox-indent-editing);
     margin-inline-end: var(--checkbox-end-margin-editing);
 }
-/* match the size of different number lists */
-.list-number {
-    display: inline-flex;
-    width: 1.03em;
+/* align live preview number list to match read move */
+.cm-formatting-list-ol {
+    display: inline-block;
+    margin-inline-start: calc(-1.5em - 9px);
+    text-align: right;
+    width: 3.2em;
 }
 /* align read mode list collapse indicator */
 .markdown-rendered .list-collapse-indicator {

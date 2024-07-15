@@ -29,6 +29,10 @@
         --checkbox-end-margin-editing: calc(0.125em - 0.5px);
     }
 }
+/* increase number list indent inside callouts to see numbers with 2 digits */
+.markdown-rendered .callout ol>li {
+    --list-indent: calc(1em + 9px);
+}
 /* codeblocks rendered inside callouts */
 .markdown-rendered .callout { 
     &:has(pre){
