@@ -1,33 +1,31 @@
+/* match live preview number list with read mode */
+.cm-formatting-list-ol {
+    display: inline-block;
+    text-align: right;
+    width: calc(var(--size-4-8) + var(--list-indent));
+    margin-inline-start: calc(var(--size-4-8) * -1);
+}
 /* center bullet point in read mode */
 .markdown-rendered .list-bullet {
-    margin-inline-start: -0.625em;
+    margin-inline-start: calc(-0.5em - 1px);
 }
 /* center bullet point in live preview */
 .markdown-source-view .list-bullet {
-    padding-inline-start: calc(var(--list-indent) - 0.83em);
-    padding-inline-end: 0.15em;
+    margin-inline-start: calc(0.3em + 1px);
+    margin-inline-end: calc(0.025em + 1.02px);
 }
 /* center checkbox in read mode */
-.markdown-preview-view .task-list-item .task-list-item-checkbox {
+ul>li.task-list-item .task-list-item-checkbox {
     vertical-align: middle;
-    font-size: var(--font-text-size);
     top: var(--checkbox-vertical-align);
-    margin-inline-start: var(--checkbox-indent);
+    left: var(--checkbox-indent);
     margin-inline-end: var(--checkbox-end-margin);
 }
-/* manage live preview space between checkbox and text with a new variable */
+/* match live preview checkbox with read mode */
 .markdown-source-view.mod-cm6 .task-list-item-checkbox {
-    font-size: var(--font-text-size);
     top: var(--checkbox-vertical-align);
     margin-inline-start: var(--checkbox-indent-editing);
     margin-inline-end: var(--checkbox-end-margin-editing);
-}
-/* align live preview number list to match read move */
-.cm-formatting-list-ol {
-    display: inline-block;
-    margin-inline-start: calc(-1.5em - 9px);
-    text-align: right;
-    width: 3.2em;
 }
 /* align read mode list collapse indicator */
 .markdown-rendered .list-collapse-indicator {

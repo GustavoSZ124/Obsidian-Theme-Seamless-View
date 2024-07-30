@@ -1,11 +1,11 @@
 @use '../utils' as *;
-/* live preview blockquote's padding to see the cursor */
+/* live preview blockquote's padding to see the cursor and match with --list-indent */
 .cm-s-obsidian span.cm-formatting-quote:first-child {
-    padding-inline-start: 2.4px;
+    padding-inline-start: calc(0.04em + 2.03px);
 }
 /* read mode blockquote margin and padding to match live preview */
 .markdown-preview-view blockquote {
-    padding-inline-start: calc(1em + 0.4px);
+    padding-inline-start: calc(var(--list-indent) - 1.6px);
     margin: 0;
 }
 /* callout wrap break words and hide scrollbar to match read mode */
