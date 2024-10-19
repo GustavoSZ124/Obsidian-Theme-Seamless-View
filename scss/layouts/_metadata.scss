@@ -16,7 +16,7 @@
     color: var(--text-muted);
     &::before {
         align-items: center;
-        content: '📜';
+        content: var(--metadata-icon);
     }
 }
 /* align metadata collapse indicator */

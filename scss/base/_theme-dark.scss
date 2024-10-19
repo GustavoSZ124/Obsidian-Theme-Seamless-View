@@ -13,4 +13,5 @@
     @include single-map-css-vars($code-syntax, $prefix: 'code-', $var: true);
     @include single-map-css-vars($canvas-colors, $prefix: 'canvas-', $var: true);
     --text-highlight-bg-rgb: var(--highlight-color);
+    --metadata-icon: '📄';
 }
