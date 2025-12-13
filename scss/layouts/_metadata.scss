@@ -1,5 +1,7 @@
-/* align properties container */
-.metadata-container {
+/* align properties container in live preview and read mode */
+.markdown-source-view .metadata-container,
+.markdown-preview-view .metadata-container {
+    margin-block-end: 0;
     transform: translateX(0);
     .metadata-add-button {
         margin-top: 0;
@@ -9,26 +11,20 @@
 .metadata-properties-heading {
     margin-bottom: 0;
     width: 100%;
+    /* align metadata collapse indicator */
+    .collapse-indicator {
+        inset-inline-start: -20px;
+    }
 }
 /* add document icon to properties title */
 .metadata-properties-title {
-    padding-inline-start: 12px;
     color: var(--text-muted);
     &::before {
         align-items: center;
         content: var(--metadata-icon);
     }
 }
-/* align metadata collapse indicator */
-.metadata-properties-heading .collapse-indicator {
-    inset-inline-start: -20px;
-}
 /* add frontmatter background in source mode */
-div:has(> .frontmatter), div:has(> .cm-hmd-frontmatter),
-.cm-line:has(> .is-collapsed):not(:has(> .cm-header, .cm-list-1)):first-child {
+div:has(> .cm-hmd-frontmatter) {
     background-color: var(--metadata-background);
-}
-/* change tag padding y inside properties */
-.metadata-property[data-property-key=tags] {
-    --tag-padding-y: 0.25em;
 }
