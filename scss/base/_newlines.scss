@@ -1,15 +1,22 @@
-/* read mode div's bottom-margin to match empty new lines between elements including paragraphs, codeblocks, lists, callouts, headings and the end of the file.
-*/
-div:has(> p):has(+ div > :is(p)),
-div:has(> pre:not(.frontmatter)):has(+ div > :is(pre, blockquote, .callout)),
-div:has(> :is(ul, ol)):has(+ div > :is(p, blockquote, .callout)),
-div:has(> :is(blockquote, .callout)):has(+ div > :is(p, blockquote, .callout):not(.admonition)),
-div:has(> :is(p, ul, ol, pre, blockquote, .callout, div)):has(+ div > :is(h1, h2, h3, h4, h5, h6)),
-div:has(> :is(p, ul, ol, pre, blockquote, .callout, table, div, h1, h2, h3, h4, h5, h6)):has(+ .mod-footer) {
-    margin-bottom: 1.5em;
+$space: 1.5em;
+/* read mode heading's divs top-margin to match one new empty line after any element except other headings, hr,
+tables or elements next to the frontmatter */
+div:not(.mod-ui, .mod-ui+ div):has(> :not(h1, h2, h3, h4, h5, h6, hr, table))+ :has(> :is(h1, h2, h3, h4, h5, h6)) {
+    margin-top: $space;
 }
-/* remove the bottom-margin of the first line in read mode if it's before a heading */
-div:has(> :is(h1, h2, h3, h4, h5, h6)):has(+ .mod-footer):is(.is-collapsed),
-div:has(> :is(.inline-title, .frontmatter)):has(+ div > :is(h1, h2, h3, h4, h5, h6)) {
-    margin-bottom: 0;
+/* read mode paragraph's divs top-margin to match one new empty line after lists, blockquotes, callouts or other paragraphs */
+div:is(.el-p, .el-ul, .el-ol, .el-blockquote, .el-div)+ .el-p {
+    margin-top: $space;
+}
+/* read mode blockquote's divs top-margin to match one new empty line after lists, callouts or other blockquotes */
+div:is(.el-ul, .el-ol, .el-blockquote, .el-div)+ .el-blockquote {
+    margin-top: $space;
+}
+/* read mode callouts's divs top-margin to match one new empty line after paragraphs, lists, blockquotes or other callouts */
+div:is(.el-p, .el-ul, .el-ol, .el-blockquote, .el-div)+ .el-div:has(> .callout) {
+    margin-top: $space;
+}
+/* read mode footer top-margin to match one new empty line after any element */
+div:not(.el-section)+ :is(.mod-footer, .el-section) {
+    margin-top: $space;
 }
