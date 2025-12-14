@@ -1,0 +1,24 @@
+@use '../utils' as *;
+/* match footnote's numbers in live preview with read mode */
+.cm-s-obsidian .cm-line.HyperMD-footnote span.cm-hmd-footnote {
+    top: 0;
+    .cm-underline {
+        color: var(--list-marker-color);
+        margin-inline-start: 8px;
+        margin-inline-end: 3px;
+        font-size: 14px;
+    }
+}
+/* match live preview sup references with read mode */
+.cm-s-obsidian span.cm-footref,
+.cm-s-obsidian span.cm-blockid {
+    vertical-align: super;
+}
+/* add footnotes border-top in live preview to match read mode */
+.HyperMD-footnote {
+    @include hr-border('-top');
+}
+/* remove hr margins inside footnotes */
+section.footnotes hr {
+    margin: 0;
+}
