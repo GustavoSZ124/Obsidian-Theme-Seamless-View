@@ -11,33 +11,37 @@ $css-variables: (
         'space-y': 16px
     ),
     'checkbox': (
-        'vertical-align': -2px,
-        'indent': calc(var(--checkbox-size) * 0.5 - 1px),
-        'indent-editing': calc(var(--checkbox-size) * 0.25 + 1px),
-        'end-margin': calc(var(--checkbox-size) * 0.5),
-        'end-margin-editing': calc(var(--checkbox-size) * -0.25 + 0.5px),
+        'end-margin': 1px,
+        'start-margin': calc(-1 * var(--checkbox-size) - var(--checkbox-end-margin)),
+        'margin-inline-start': calc(var(--list-indent) + var(--checkbox-start-margin)),
+        'margin-inline-end': calc(var(--checkbox-end-margin) - 0.27rem),
+        'vertical-align': -0.1em
     ),
     'embed': (
         'padding': 0,
         'border-start': none
     ),
-    'file': ('margins': 0 var(--size-4-8) var(--size-4-8)),
+    'file': (
+        'margins-x': var(--size-4-8),
+        'margins-y': var(--size-4-8),
+        'margins': 0 var(--file-margins-x) var(--file-margins-y)
+    ),
     'header': ('height': 37px), //titlebar height
     'indentation-guide': (
-        'reading-indent': calc(-1 * var(--list-indent) / 2),
+        'reading-indent': calc(var(--list-indent) / -2),
         'editing-indent': calc(var(--list-indent) / 2 - 1px),
     ),
     'inline-title': (
-        'margin-bottom': 4px,
+        'margin-bottom': 0px,
         'size': var(--h2-size),
         'weight': var(--h2-weight),
         'color': var(--text-muted),
     ),
     'list': (
-        'spacing': 0,
-        'indent': calc(1em + 2px),
+        'indent': calc(var(--checkbox-size) + 2px),
         'indent-editing': 0,
-        // 'bullet-end-padding': 1.2rem,
+        'spacing': 0,
+        'bullet-end-padding': 0px,
     ),
     'metadata': (
         'background': var(--background-primary-alt),

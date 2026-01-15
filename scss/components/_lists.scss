@@ -1,37 +1,45 @@
-/* match live preview number list with read mode */
-.cm-formatting-list-ol {
+/* make sure lists use the css variable in read mode */
+.markdown-rendered ul> li, .markdown-rendered ol> li {
+    margin-inline-start: var(--list-indent);
+}
+/* assign a width and a margin base on file margins and list indent to match live preview number list with read mode */
+.cm-formatting-list-ol .list-number {
     display: inline-block;
     text-align: right;
-    width: calc(var(--size-4-8) + var(--list-indent));
-    margin-inline-start: calc(var(--size-4-8) * -1);
+    width: calc(var(--list-indent) + var(--file-margins-x));
+    margin-inline-start: calc(-1 * var(--file-margins-x));
+}
+/* center checkbox in read mode */
+ul> li.task-list-item> p> .task-list-item-checkbox,
+ul> li.task-list-item> .task-list-item-checkbox {
+    margin-inline-start: var(--checkbox-start-margin);
+    margin-inline-end: var(--checkbox-end-margin);
+    top: var(--checkbox-vertical-align);
+    vertical-align: middle;
+}
+/* align live preview checkbox with the read mode removing the label's margin and adding an end margin to the checkbox */
+.markdown-source-view.mod-cm6 .task-list-label {
+    margin-inline-start: 0;
+    .task-list-item-checkbox {
+        margin-inline-end: var(--checkbox-margin-inline-end);
+        top: var(--checkbox-vertical-align);
+    }
 }
 /* center bullet point in read mode */
 .markdown-rendered .list-bullet {
-    margin-inline-start: calc(-0.5em - 1px);
+    margin-inline-start: calc(var(--list-indent) / -2);
 }
 /* center bullet point in live preview */
 .markdown-source-view .list-bullet {
-    margin-inline-start: calc(0.3em + 1px);
-    margin-inline-end: calc(0.025em + 1.02px);
-}
-/* center checkbox in read mode */
-ul>li.task-list-item .task-list-item-checkbox {
-    vertical-align: middle;
-    top: var(--checkbox-vertical-align);
-    left: var(--checkbox-indent);
-    margin-inline-end: var(--checkbox-end-margin);
-}
-/* match live preview checkbox with read mode */
-.markdown-source-view.mod-cm6 .task-list-item-checkbox {
-    top: var(--checkbox-vertical-align);
-    margin-inline-start: var(--checkbox-indent-editing);
-    margin-inline-end: var(--checkbox-end-margin-editing);
+    margin-inline-start: calc((var(--list-indent) - 0.4em) / 2);
+    margin-inline-end: calc((var(--list-indent) - 0.4em) / 2 - 0.27em);
 }
 /* align read mode list collapse indicator */
 .markdown-rendered .list-collapse-indicator {
-    margin-inline-start: calc(-14px - var(--list-indent));
+    margin-inline-start: calc(-1.5 * var(--list-indent) - 5px);
+    padding-inline-end: var(--list-indent);
 }
-/* align live preview list collapse indicator */
+/* align live preview list collapse indicator with read mode */
 .markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-list-line {
     .cm-fold-indicator .collapse-indicator {
         inset-inline-end: 4px;
