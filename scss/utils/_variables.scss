@@ -41,7 +41,7 @@ $css-variables: (
         'indent': calc(var(--checkbox-size) + 2px),
         'indent-editing': 0,
         'spacing': 0,
-        'bullet-end-padding': 0px,
+        'bullet-end-padding': calc(var(--list-indent))
     ),
     'metadata': (
         'background': var(--background-primary-alt),
