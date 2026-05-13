@@ -36,16 +36,15 @@ ul> li.task-list-item> .task-list-item-checkbox {
 }
 /* align read mode list collapse indicator */
 .markdown-rendered .list-collapse-indicator {
-    margin-inline-start: calc(-1.5 * var(--list-indent) - 5px);
+    margin-inline-start: calc(-14px - var(--list-indent));
     padding-inline-end: var(--list-indent);
 }
 /* align live preview list collapse indicator with read mode */
 .markdown-source-view.mod-cm6.is-live-preview .cm-line.HyperMD-list-line {
     .cm-fold-indicator .collapse-indicator {
-        inset-inline-end: calc(4px - var(--list-bullet-end-padding));
-        padding-inline-end: var(--list-bullet-end-padding);
+        padding-inline-end: 4px;
     }
     &:not(.cm-active):not(.HyperMD-task-line) .cm-fold-indicator .collapse-indicator {
-        inset-inline-end: calc(4px - var(--list-bullet-end-padding));
+        padding-inline-end: calc(var(--list-bullet-end-padding) + 4px);
     }
 }
