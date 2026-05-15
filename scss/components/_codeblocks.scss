@@ -1,19 +1,20 @@
-/* change read mode codeblock sizes to match live preview */
+/* live preview code blocks and its collapse indicator paddings to align with lists */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+    padding-inline-end: 12px;
+    &:not(.HyperMD-list-line) {
+        padding-inline-start: var(--list-indent);
+    }
+    .collapse-indicator {
+        padding-inline-end: 4px;
+    }
+}
+/* change read mode code blocks paddings to match live preview */
 .markdown-rendered pre {
     padding: 1.3125em var(--size-4-3) 1.3125em 18px;
     min-height: fit-content;
-    overflow: hidden;
     margin: 0;
     code {
         display: block;
-    }
-}
-/* live preview codeblock inline end padding to match read mode */
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-    padding-inline-start: 18px;
-    padding-inline-end: 12px;
-    .collapse-indicator {
-        padding-inline-end: 3px;
     }
 }
 /* read mode codeblock copy button */
@@ -24,8 +25,8 @@
 /* live preview codeblock copy button */
 .markdown-source-view.mod-cm6 .code-block-flair {
     padding: var(--size-4-1) var(--size-4-1) 0;
-    top: 0;
     right: 1px;
+    top: 0;
 }
 /* css/scss syntax colors */
 pre.language-css, pre.language-scss {

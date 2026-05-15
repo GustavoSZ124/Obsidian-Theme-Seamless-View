@@ -16,6 +16,10 @@ div:is(.el-ul, .el-ol, .el-blockquote, .el-div)+ .el-blockquote {
 div:is(.el-p, .el-ul, .el-ol, .el-blockquote, .el-div)+ .el-div:has(> .callout) {
     margin-top: $space;
 }
+/* read mode code blocks divs top-margin to match one new empty line after paragraphs, lists, blockquotes or callouts */
+div:is(.el-p, .el-ul, .el-ol, .el-blockquote, .el-div)+.el-pre {
+    margin-top: $space;
+}
 /* read mode footer top-margin to match one new empty line after any element */
 div:not(.el-section)+ :is(.mod-footer, .el-section) {
     margin-top: $space;
