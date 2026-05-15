@@ -26,7 +26,7 @@
 @mixin hr-border($dir: '') {
     border#{$dir}: var(--hr-thickness) solid var(--hr-color);
 }
-// remove default li marker and add styled bullet point
+// remove default li::markers and add styled bullet points
 @mixin bullet-point {
     ul>li::marker {
         color: transparent

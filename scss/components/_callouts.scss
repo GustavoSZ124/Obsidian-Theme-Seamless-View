@@ -14,37 +14,30 @@
     padding-inline-start: 0.275em;
     padding-inline-end: 2.7px;
 }
-/* callout wrap break words and hide scrollbar to match read mode */
-.callout {
-    overflow-wrap: break-word;
-    margin: 0;
-    .callout-content {
-        overflow: hidden;
-    }
-}
-/* remove callout margins inside callouts in both modes */
-.markdown-preview-view .callout-content .callout,
+/* remove callouts margin, alone or inside an another callout in both modes */
+.callout,
+.callout-content .callout,
 .markdown-source-view.mod-cm6 .callout-content .callout {
     margin: 0;
+}
+/* paragraphs top-margin inside callouts to match one new empty line after other paragraphs, lists, blockquotes or callouts */
+.callout-content :is(p, ul, ol, blockquote, .callout)+p {
+    margin-block-start: 1.5em;
 }
 /* live preview lists inside callouts to match read mode */
 .markdown-source-view .callout {
     @include bullet-point;
-    .task-list-item-checkbox {
-        --checkbox-indent-editing: -1.1em;
-        --checkbox-end-margin-editing: calc(0.125em - 0.5px);
-    }
 }
-/* increase number list indent inside callouts to see numbers with 2 digits */
-.markdown-rendered .callout ol>li {
-    --list-indent: calc(1em + 9px);
+/* add more indentation for ordered lists inside callouts when there are 10 or more items in both modes */
+.callout ol:has(li:nth-child(10)) {
+    --list-indent: calc(2 * (var(--checkbox-size) + 2px));
 }
-/* codeblocks rendered inside callouts */
-.markdown-rendered .callout { 
-    &:has(pre){
-        padding-bottom: 13px;
-    }
-    pre{
-        padding: 0 0 0 1px;
-    }
+/* remove code's background color inside callouts and change its padding */
+.markdown-rendered .callout pre {
+    background-color: transparent;
+    padding: 1px 0 2px 0;
+}
+/* keep default table border color inside callouts */
+.callout table {
+    --table-border-color: var(--table-header-border-color)
 }
