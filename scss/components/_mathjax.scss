@@ -1,17 +1,11 @@
-/* match the live preview with read mode when a math block is inside of a paragraph */
-.markdown-source-view .math-block {
-    vertical-align: middle;
-    display: inline-block;
-    width: 100%;
-    /* align math block edit button */
-    .edit-block-button {
-        padding: 1px 4px;
-        top: 0;
-        right: 0;
-    }
-}
 /* reduce the padding and remove margins in live preview and read mode */
 .math-block mjx-container[jax="CHTML"][display="true"] {
     padding: 2px 0;
     margin: 0;
+}
+/* align math block edit button */
+.markdown-source-view .math-block .edit-block-button {
+    padding: 1px 4px;
+    top: 0;
+    right: 0;
 }
