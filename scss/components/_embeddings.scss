@@ -13,10 +13,25 @@
     // @include bullet-point;
     margin-inline-start: -0.85em;
 }
-/* center embed images in both modes, needs to be !important for external images in live preview */
-.markdown-source-view.mod-cm6 img[alt*=center],
-.markdown-reading-view img[alt*=center] {
-    margin-right: auto !important;
-    margin-left: auto !important;
+/* center internal embed images in read mode */
+.markdown-rendered img[alt$="center"] {
+    margin-inline: auto;
     display: block;
+}
+/* center internal embed images in live preview */
+.cm-line>.image-embed[alt$="center"],
+.cm-line>.image-embed[src$="#center"] {
+    margin-inline: auto;
+    display: block;
+    line-height: 0;
+}
+/* hide widget buffer images in live preview */
+.markdown-source-view.mod-cm6 img.cm-widgetBuffer {
+    position: absolute;
+    overflow: hidden;
+}
+/* remove padding from embed images in live preview */
+.cm-content .image-embed img {
+    padding-left: 0;
+    padding-right: 0;
 }
