@@ -29,13 +29,13 @@ hr, .markdown-rendered hr {
 }
 /* read mode tag paddings inside headings */
 .heading-collapse-indicator~a.tag {
+    vertical-align: baseline;
     --tag-padding-x: 0.5em;
-    --tag-padding-y: 0;
 }
 /* live preview tag paddings and position inside headings to match read mode */
 .HyperMD-header .cm-hashtag {
+    font-size: var(--tag-size) !important;
+    display: inline-block;
     --tag-padding-x: 0.5em;
     --tag-padding-y: 0;
-    display: inline-block;
-    font-size: var(--tag-size) !important;
 }
