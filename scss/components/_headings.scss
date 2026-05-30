@@ -27,12 +27,12 @@ hr, .markdown-rendered hr {
     --code-background: var(--background-primary-alt);
     padding: 0;
 }
-/* read mode tag paddings inside headings */
+/* read mode tag paddings and vertical alignment inside headings to match live preview */
 .heading-collapse-indicator~a.tag {
     vertical-align: baseline;
     --tag-padding-x: 0.5em;
 }
-/* live preview tag paddings and position inside headings to match read mode */
+/* live preview tag paddings inside headings to match read mode, the font size needs to be !important to have effect */
 .HyperMD-header .cm-hashtag {
     font-size: var(--tag-size) !important;
     display: inline-block;

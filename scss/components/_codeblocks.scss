@@ -30,9 +30,9 @@
 }
 /* css/scss syntax colors */
 pre.language-css, pre.language-scss {
-    --code-string: var(--color-orange-alt);
+    --code-string: var(--color-orange-light);
     --code-function: var(--color-cyan);
-    --code-normal: var(--color-red-alt);
+    --code-normal: var(--color-red-light);
 }
 /* js/jsx syntax colors */
 pre.language-js, pre.language-jsx {
