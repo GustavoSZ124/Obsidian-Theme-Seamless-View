@@ -21,9 +21,9 @@ $colors: (
     'orange': hsl(35, 100%, 40%),
     'green': hsl(70, 100%, 25%),
     'cyan': hsl(180, 100%, 25%),
-    'cyan-alt': hsl(185, 70%, 65%),
+    'cyan-light': hsl(185, 70%, 65%),
     'blue': hsl(200, 90%, 30%),
-    'blue-alt': hsl(210,90%,45%),
+    'blue-dark': hsl(210,90%,45%),
     'purple': hsl(285, 65%, 50%),
     'pink': hsl(331, 65%, 53%),
 );
@@ -47,8 +47,8 @@ $tag-colors: (
     'bold': --color-blue,
     'italic': --color-red,
     'table-border': --color-base-50,
-    'highlight': --color-cyan-alt-rgb,
-    'canvas': --color-orange-rgb,
+    'highlight': --color-cyan-light,
+    'canvas': --color-orange,
 );
 
 $heading-colors: (
@@ -61,7 +61,7 @@ $heading-colors: (
 );
 
 $code-syntax: (
-    'function': --color-blue-alt,
+    'function': --color-blue-dark,
     'keyword': --color-purple,
     'operator': --color-cyan,
     'property': --color-red,
@@ -71,4 +71,4 @@ $code-syntax: (
     'value': --color-orange,
 );
 
-$canvas-colors: ('color-6': --color-accent-rgb);
+$canvas-colors: ('color-6': --color-accent);

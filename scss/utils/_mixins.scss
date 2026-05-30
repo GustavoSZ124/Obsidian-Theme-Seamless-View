@@ -16,7 +16,7 @@
 @mixin colors($colors) {
     @each $key, $value in $colors {
         --color-#{$key}: #{$value};
-        --color-#{$key}-rgb: #{red($value)}, #{green($value)}, #{blue($value)};
+        // --color-#{$key}-rgb: #{red($value)}, #{green($value)}, #{blue($value)};
     }
 }
 // El $dir debe incluir un '-' al inicio

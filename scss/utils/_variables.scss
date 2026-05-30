@@ -54,6 +54,7 @@ $css-variables: (
     ),
     'scrollbar': ('width': 12px),
     'tag': ('padding-y': 0.15em),
+    'text': ('highlight-bg': rgb(from var(--highlight-color) r g b / 0.4))
 );
 
 $heading-sizes: (

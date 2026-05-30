@@ -2,12 +2,12 @@ $accent-color: hsl(85, 45%, 40%);
 
 $colors: (
     'accent': $accent-color,
-    'red-alt': hsl(355, 65%, 70%),
-    'red-alt2': hsl(0, 80%, 30%),
-    'orange-alt': hsl(29, 54%, 61%),
+    'red-light': hsl(355, 65%, 70%),
+    'red-dark': hsl(0, 80%, 30%),
+    'orange-light': hsl(29, 54%, 61%),
     'yellow': hsl(50, 65%, 70%),
-    'green-alt': hsl(95, 38%, 62%),
-    'cyan-alt': hsl(170, 100%, 24%),
+    'green-light': hsl(95, 38%, 62%),
+    'cyan-dark': hsl(170, 100%, 24%),
     'cyan': hsl(187, 47%, 55%),
     'blue': hsl(207, 82%, 70%),
     'pink': hsl(286, 60%, 67%),
@@ -30,29 +30,29 @@ $backgrounds: (
 $tag-colors: (
     'hr': --color-base-40,
     'strike': --text-muted,
-    'bold': --color-red-alt,
+    'bold': --color-red-light,
     'italic': --color-yellow,
     'table-border': --color-base-50,
-    'highlight': --color-red-alt2-rgb,
+    'highlight': --color-red-dark
 );
 
 $heading-colors: (
-    'h1': --color-red-alt,
+    'h1': --color-red-light,
     'h2': --color-yellow,
     'h3': --color-blue,
-    'h4': --color-orange-alt,
-    'h5': --color-green-alt,
+    'h4': --color-orange-light,
+    'h5': --color-green-light,
     'h6': --color-purple
 );
 
 $code-syntax: (
     'function': --color-blue,
     'operator': --color-cyan,
-    'property': --color-red-alt,
-    'punctuation': --color-orange-alt,
-    'string': --color-green-alt,
-    'tag': --color-red-alt,
-    'value': --color-orange-alt,
+    'property': --color-red-light,
+    'punctuation': --color-orange-light,
+    'string': --color-green-light,
+    'tag': --color-red-light,
+    'value': --color-orange-light,
 );
 
-$canvas-colors: ('color-6': --color-accent-rgb);
+$canvas-colors: ('color-6': --color-accent);
